@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil - K8Stream</title>
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">K8Stream</div>
+    <button class="logout-btn">Logout</button>
+  </header>
+
+  
+<!-- Profile Info -->
+<section class="profile">
+  <!-- VIP Banner -->
+<div id="vip-banner" class="vip-banner"></div>
+
+  <div class="avatar-wrapper">
+    <img id="avatarImage" src="https://picsum.photos/seed/user-avatar/120" alt="Avatar" class="avatar">
+    <label for="avatarInput" class="avatar-edit">
+      <i class="fas fa-camera"></i>
+    </label>
+    <input type="file" id="avatarInput" accept="image/*" style="display:none;">
+  </div>
+  <h2 class="name">User</h2>
+  <p class="username">@username</p>
+</section>
+
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="stat"><h3 id="tayangan">0</h3><p>Tayangan</p></div>
+    <div class="stat"><h3 id="jam">0j 0m</h3><p>Jam</p></div>
+    <div class="stat"><h3 id="ditonton">0</h3><p>Ditonton</p></div>
+    <div class="stat"><h3 id="selesai">0</h3><p>Selesai</p></div>
+  </section>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="riwayat">Riwayat</button>
+    <button class="tab-btn" data-tab="watchlist">Watchlist</button>
+  </div>
+
+  <!-- Content -->
+  <section class="tab-content active" id="riwayat">
+    <h3>Riwayat Menonton</h3>
+    <div id="history-list" class="card-grid"></div>
+  </section>
+
+  <section class="tab-content" id="watchlist">
+    <h3>Watchlist</h3>
+    <div id="watchlist-grid" class="card-grid"></div>
+  </section>
+
+  <script>
+  // === Ambil data user ===
+  const userId = localStorage.getItem("userId");
+  const name = localStorage.getItem("userName") || "Guest";
+  const username = localStorage.getItem("userEmail") || "guest@mail.com";
+  document.querySelector(".name").textContent = name;
+  document.querySelector(".username").textContent = "@" + name.toLowerCase().replace(/\s+/g,"");
+
+  // === CEK STATUS VIP PER AKUN ===
+  const isVip = localStorage.getItem(`vipStatus_${userId}`) === 'true';
+  const banner = document.getElementById("vip-banner");
+
+  if (isVip) {
+    document.querySelector(".name").innerHTML += `
+      <span class="vip-badge" style="color:#ffcc00; margin-left:8px;">
+        <i class="fas fa-crown"></i> VIP
+      </span>
+    `;
+    banner.classList.add("vip-active");
+    banner.innerHTML = `
+      <i class="fas fa-crown"></i> <span>Anda adalah <strong>Member VIP</strong>! Nikmati semua konten eksklusif 🎬</span>
+    `;
+  } else {
+    banner.classList.add("non-vip");
+    banner.innerHTML = `
+      <i class="fas fa-lock"></i> <span>Anda belum VIP. <a href="vip.html" style="color:#ff4757; font-weight:600;">Upgrade sekarang</a> untuk membuka semua episode!</span>
+    `;
+  }
+
+  // === Stats ===
+  const tayangan = parseInt(localStorage.getItem(`watchCount_${userId}`)) || 0;
+  const watchSeconds = parseInt(localStorage.getItem(`watchSeconds_${userId}`)) || 0;
+  const jam = Math.floor(watchSeconds / 3600);
+  const menit = Math.floor((watchSeconds % 3600) / 60);
+  const watchedMovies = JSON.parse(localStorage.getItem(`watchedMovies_${userId}`)) || [];
+  const finishedMovies = JSON.parse(localStorage.getItem(`finishedMovies_${userId}`)) || [];
+
+  document.getElementById("tayangan").textContent = tayangan;
+  document.getElementById("jam").textContent = `${jam}j ${menit}m`;
+  document.getElementById("ditonton").textContent = watchedMovies.length;
+  document.getElementById("selesai").textContent = finishedMovies.length;
+
+  // === Watchlist ===
+  const watchlist = JSON.parse(localStorage.getItem(`favoriteMovies_${userId}`)) || [];
+  const watchlistGrid = document.getElementById("watchlist-grid");
+  if (watchlist.length === 0) {
+    watchlistGrid.innerHTML = "<p style='color:#aaa'>Belum ada film di Watchlist.</p>";
+  } else {
+    watchlist.forEach(title => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="https://picsum.photos/seed/${title.replace(/\s+/g,"").toLowerCase()}/200/300" alt="${title}">
+        <h4>${title}</h4>
+      `;
+      watchlistGrid.appendChild(card);
+    });
+  }
+
+  // === Avatar Upload ===
+  const avatarImage = document.getElementById("avatarImage");
+  const avatarInput = document.getElementById("avatarInput");
+  const savedAvatar = localStorage.getItem(`userAvatar_${userId}`);
+  if (savedAvatar) {
+    avatarImage.src = savedAvatar;
+  }
+
+  avatarInput.addEventListener("change", function() {
+    const file = avatarInput.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        avatarImage.src = e.target.result;
+        localStorage.setItem(`userAvatar_${userId}`, e.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // === Tabs ===
+  const tabBtns = document.querySelectorAll(".tab-btn");
+  const tabContents = document.querySelectorAll(".tab-content");
+  tabBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      tabBtns.forEach(b => b.classList.remove("active"));
+      tabContents.forEach(c => c.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById(btn.dataset.tab).classList.add("active");
+    });
+  });
+
+  // === Logout ===
+  document.querySelector(".logout-btn").addEventListener("click", () => {
+    // simpan semua data penting per akun sebelum dihapus
+    const keepKeys = Object.keys(localStorage).filter(k =>
+      k.startsWith("vipStatus_") ||
+      k.startsWith("watchCount_") ||
+      k.startsWith("watchSeconds_") ||
+      k.startsWith("favoriteMovies_") ||
+      k.startsWith("watchedMovies_") ||
+      k.startsWith("finishedMovies_") ||
+      k.startsWith("userAvatar_")
+    );
+
+    const keepData = {};
+    keepKeys.forEach(k => keepData[k] = localStorage.getItem(k));
+
+    // hapus data login
+    localStorage.clear();
+
+    // restore data user
+    for (const [key, value] of Object.entries(keepData)) {
+      localStorage.setItem(key, value);
+    }
+
+    window.location.href = "login.html";
+  });
+</script>
+
+
+</body>
+</html>

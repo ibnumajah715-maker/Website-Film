@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch BIG HERO 6- K8Stream</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="bighero6.css">
+</head>
+<body>
+  <!-- Header -->
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="movie-detail-container">
+      <!-- Movie Player Section -->
+      <section class="movie-player">
+        <div class="video-container">
+          <video controls id="movieVideo" poster="https://picsum.photos/seed/deadpoolwolverine/1280/720.jpg">
+            <source src="Big hero 6.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
+      <!-- Movie Info Section -->
+      <section class="movie-info">
+        <div class="movie-header">
+          <h1>Big Hero 6 </h1>
+          <div class="movie-meta">
+            <span class="year">2014</span>
+            <span class="duration">1h 42m</span>
+            <span class="rating"><i class="fas fa-star"></i>7.8</span>
+            <span class="age-restriction">13+</span>
+          </div>
+          <div class="movie-actions">
+            <button class="action-btn play-btn">
+              <i class="fas fa-play"></i> Play
+            </button>
+            <button class="action-btn add-to-list">
+              <i class="fas fa-plus"></i> My List
+            </button>
+            <button class="action-btn share-btn">
+              <i class="fas fa-share-alt"></i> Share
+            </button>
+          </div>
+        </div>
+
+        <div class="movie-description">
+          <h2>Sinopsis</h2>
+          <p>Film animasi produksi Walt Disney Animation Studios ini bercerita tentang Hiro Hamada, seorang remaja jenius di bidang robotika yang tinggal di kota fiksi San Fransokyo. Setelah kematian kakaknya, Tadashi, Hiro menemukan ciptaan Tadashi yang bernama Baymax, robot medis berbentuk besar dan lembut.
+              Ketika Hiro mengetahui ada konspirasi berbahaya di balik tragedi yang menimpa kakaknya, ia memutuskan untuk mengungkap kebenarannya. Bersama Baymax dan teman-teman baru Tadashi — Go Go, Wasabi, Honey Lemon, dan Fred — Hiro membentuk tim superhero teknologi bernama Big Hero 6.</p>
+        </div>
+
+        <div class="movie-details">
+          <div class="detail-column">
+            <h3>Cast</h3>
+            <ul class="cast-list">
+              <li>Ryan Potter sebagai Hiro Hamada</li>
+              <li>Scott Adsit sebagai Baymax</li>
+              <li>Daniel Henney sebagai Tadashi Hamada</li>
+              <li>BT.J. Miller sebagai Fred</li>
+              <li>Jamie Chung sebagai Go Go Tomago</li>
+              <li>Damon Wayans Jr. sebagai Wasabi</li>
+              <li>Génesis Rodríguez sebagai Honey Lemo</li>
+              <li>James Cromwell sebagai Professor Robert Callaghan / Yokai</li>
+              <li>Maya Rudolph sebagai Aunt Cas</li>
+              <li>Alan Tudyk sebagai Alistair Krei</li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="detail-column">
+            <h3>Genre</h3>
+            <div class="genre-tags">
+              <span class="genre-tag">Action</span>
+              <span class="genre-tag">Comedy</span>
+              <span class="genre-tag">Sci-Fi</span>
+              <span class="genre-tag">Adventure</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- User Rating Section -->
+      <section class="user-rating">
+        <h2>Rate This Movie</h2>
+        <div class="rating-container">
+          <div class="stars-rating">
+            <i class="far fa-star star" data-rating="1"></i>
+            <i class="far fa-star star" data-rating="2"></i>
+            <i class="far fa-star star" data-rating="3"></i>
+            <i class="far fa-star star" data-rating="4"></i>
+            <i class="far fa-star star" data-rating="5"></i>
+          </div>
+          <div class="rating-value">
+            <span id="currentRating">0</span>/5
+          </div>
+          <button class="submit-rating" id="submitRating">Submit Rating</button>
+        </div>
+        <div class="rating-stats">
+          <div class="rating-breakdown">
+            <div class="rating-bar">
+              <span class="bar-label">5</span>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: 70%"></div>
+              </div>
+              <span class="bar-percent">70%</span>
+            </div>
+            <div class="rating-bar">
+              <span class="bar-label">4</span>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: 20%"></div>
+              </div>
+              <span class="bar-percent">20%</span>
+            </div>
+            <div class="rating-bar">
+              <span class="bar-label">3</span>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: 7%"></div>
+              </div>
+              <span class="bar-percent">7%</span>
+            </div>
+            <div class="rating-bar">
+              <span class="bar-label">2</span>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: 2%"></div>
+              </div>
+              <span class="bar-percent">2%</span>
+            </div> 
+            <div class="rating-bar">
+              <span class="bar-label">1</span>
+              <div class="bar-container">
+                <div class="bar-fill" style="width: 1%"></div>
+              </div>
+              <span class="bar-percent">1%</span>
+            </div>
+          </div>
+          <div class="average-rating">
+            <div class="rating-number">8.2</div>
+            <div class="rating-count">Based on 1,245 ratings</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comments Section -->
+      <section class="comments-section">
+        <h2>Comments</h2>
+        
+        <!-- Add Comment Form -->
+        <div class="add-comment">
+          <div class="user-avatar">
+            <img src="user.jpg" alt="User">
+          </div>
+          <div class="comment-form">
+            <textarea id="commentText" placeholder="Add a comment..."></textarea>
+            <button id="submitComment" class="submit-comment-btn">Post Comment</button>
+          </div>
+        </div>
+        
+        <!-- Comments List -->
+        <div class="comments-list" id="commentsList">
+          <!-- Comment 1 -->
+          <div class="comment">
+            <div class="user-avatar">
+              <img src="https://picsum.photos/seed/user1/50/50.jpg" alt="User">
+            </div>
+            <div class="comment-content">
+              <div class="comment-header">
+                <span class="user-name">echa</span>
+                <span class="comment-date">2 days ago</span>
+              </div>
+              <div class="comment-text">
+                wahh recomended banget ini mah!!
+              </div>
+              <div class="comment-actions">
+                <button class="action-like"><i class="far fa-thumbs-up"></i> 24</button>
+                <button class="action-reply"><i class="far fa-comment"></i> Reply</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Comment 2 -->
+          <div class="comment">
+            <div class="user-avatar">
+              <img src="https://picsum.photos/seed/user2/50/50.jpg" alt="User">
+            </div>
+            <div class="comment-content">
+              <div class="comment-header">
+                <span class="user-name">mega milo</span>
+                <span class="comment-date">1 week ago</span>
+              </div>
+              <div class="comment-text">
+                Saya sudah menunggu film ini sejak lama.
+              </div>
+              <div class="comment-actions">
+                <button class="action-like"><i class="far fa-thumbs-up"></i> 18</button>
+                <button class="action-reply"><i class="far fa-comment"></i> Reply</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Comment 3 -->
+          <div class="comment">
+            <div class="user-avatar">
+              <img src="https://picsum.photos/seed/user3/50/50.jpg" alt="User">
+            </div>
+            <div class="comment-content">
+              <div class="comment-header">
+                <span class="user-name">rido</span>
+                <span class="comment-date">2 weeks ago</span>
+              </div>
+              <div class="comment-text">
+                animasinya lucu dan keren
+              </div>
+              <div class="comment-actions">
+                <button class="action-like"><i class="far fa-thumbs-up"></i> 12</button>
+                <button class="action-reply"><i class="far fa-comment"></i> Reply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Load More Comments Button -->
+        <div class="load-more">
+          <button id="loadMoreComments" class="load-more-btn">Load More Comments</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 K8Stream. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Rating functionality
+    const stars = document.querySelectorAll('.star');
+    const currentRatingElement = document.getElementById('currentRating');
+    const submitRatingBtn = document.getElementById('submitRating');
+    let selectedRating = 0;
+
+    stars.forEach(star => {
+      star.addEventListener('click', function() {
+        selectedRating = parseInt(this.dataset.rating);
+        updateStars(selectedRating);
+        currentRatingElement.textContent = selectedRating;
+      });
+
+      star.addEventListener('mouseover', function() {
+        const hoverRating = parseInt(this.dataset.rating);
+        updateStars(hoverRating);
+      });
+    });
+
+    document.querySelector('.stars-rating').addEventListener('mouseleave', function() {
+      updateStars(selectedRating);
+    });
+
+    function updateStars(rating) {
+      stars.forEach((star, index) => {
+        if (index < rating) {
+          star.classList.remove('far');
+          star.classList.add('fas');
+        } else {
+          star.classList.remove('fas');
+          star.classList.add('far');
+        }
+      });
+    }
+
+    submitRatingBtn.addEventListener('click', function() {
+      if (selectedRating > 0) {
+        // In a real application, you would send this rating to a server
+        alert(`Thank you for rating this movie ${selectedRating} stars!`);
+        
+        // Reset rating
+        selectedRating = 0;
+        updateStars(0);
+        currentRatingElement.textContent = '0';
+      } else {
+        alert('Please select a rating before submitting.');
+      }
+    });
+
+    // Comments functionality
+    const commentText = document.getElementById('commentText');
+    const submitCommentBtn = document.getElementById('submitComment');
+    const commentsList = document.getElementById('commentsList');
+    const loadMoreBtn = document.getElementById('loadMoreComments');
+
+    submitCommentBtn.addEventListener('click', function() {
+      const text = commentText.value.trim();
+      
+      if (text) {
+        // Create new comment element
+        const newComment = document.createElement('div');
+        newComment.className = 'comment';
+        newComment.innerHTML = `
+          <div class="user-avatar">
+            <img src="user.jpg" alt="User">
+          </div>
+          <div class="comment-content">
+            <div class="comment-header">
+              <span class="user-name">You</span>
+              <span class="comment-date">Just now</span>
+            </div>
+            <div class="comment-text">${text}</div>
+            <div class="comment-actions">
+              <button class="action-like"><i class="far fa-thumbs-up"></i> 0</button>
+              <button class="action-reply"><i class="far fa-comment"></i> Reply</button>
+            </div>
+          </div>
+        `;
+        
+        // Add to top of comments list
+        commentsList.insertBefore(newComment, commentsList.firstChild);
+        
+        // Clear textarea
+        commentText.value = '';
+        
+        // Show success message
+        alert('Your comment has been posted!');
+        
+        // Add event listeners to new comment buttons
+        attachCommentEventListeners(newComment);
+      } else {
+        alert('Please enter a comment before posting.');
+      }
+    });
+
+    // Load more comments functionality
+    let commentsLoaded = 3; // Initial number of comments loaded
+    const totalComments = 10; // Total comments available
+    
+    loadMoreBtn.addEventListener('click', function() {
+      // In a real application, you would fetch more comments from a server
+      // For this example, we'll just add some placeholder comments
+      
+      if (commentsLoaded < totalComments) {
+        // Simulate loading more comments
+        for (let i = 0; i < 2; i++) {
+          if (commentsLoaded >= totalComments) break;
+          
+          const newComment = document.createElement('div');
+          newComment.className = 'comment';
+          newComment.innerHTML = `
+            <div class="user-avatar">
+              <img src="https://picsum.photos/seed/user${commentsLoaded + 1}/50/50.jpg" alt="User">
+            </div>
+            <div class="comment-content">
+              <div class="comment-header">
+                <span class="user-name">User ${commentsLoaded + 1}</span>
+                <span class="comment-date">3 weeks ago</span>
+              </div>
+              <div class="comment-text">
+                This is a placeholder comment for demonstration purposes. In a real application, this would be actual user comments.
+              </div>
+              <div class="comment-actions">
+                <button class="action-like"><i class="far fa-thumbs-up"></i> 5</button>
+                <button class="action-reply"><i class="far fa-comment"></i> Reply</button>
+              </div>
+            </div>
+          `;
+          
+          commentsList.appendChild(newComment);
+          commentsLoaded++;
+          
+          // Add event listeners to new comment buttons
+          attachCommentEventListeners(newComment);
+        }
+        
+        // Hide load more button if all comments are loaded
+        if (commentsLoaded >= totalComments) {
+          loadMoreBtn.style.display = 'none';
+        }
+      }
+    });
+
+    // Function to attach event listeners to comment buttons
+    function attachCommentEventListeners(comment) {
+      const likeBtn = comment.querySelector('.action-like');
+      const replyBtn = comment.querySelector('.action-reply');
+      
+      if (likeBtn) {
+        likeBtn.addEventListener('click', function() {
+          const icon = this.querySelector('i');
+          const count = parseInt(this.textContent.trim());
+          
+          if (icon.classList.contains('far')) {
+            icon.classList.remove('far');
+            icon.classList.add('fas');
+            this.innerHTML = `<i class="fas fa-thumbs-up"></i> ${count + 1}`;
+          } else {
+            icon.classList.remove('fas');
+            icon.classList.add('far');
+            this.innerHTML = `<i class="far fa-thumbs-up"></i> ${count - 1}`;
+          }
+        });
+      }
+      
+      if (replyBtn) {
+        replyBtn.addEventListener('click', function() {
+          alert('fitur balas chatnya belum bisa yaa harap bersabar..');
+        });
+      }
+    }
+
+    // Attach event listeners to existing comments
+    document.querySelectorAll('.comment').forEach(comment => {
+      attachCommentEventListeners(comment);
+    });
+
+    // Play button functionality
+const playBtn = document.querySelector('.play-btn');
+const video = document.getElementById('movieVideo');
+
+playBtn.addEventListener('click', function() {
+  video.play();
+});
+
+// === Hitung jumlah tayangan saat video pertama kali diputar ===
+// === Hitung Jam Nonton ===
+let lastTime = 0;
+video.addEventListener("timeupdate", function() {
+  if (localStorage.getItem("isLoggedIn") === "true") {
+    let current = Math.floor(video.currentTime);
+    if (current - lastTime >= 5) { // update tiap 5 detik
+      const userId = localStorage.getItem("userId");
+let watchSeconds = parseInt(localStorage.getItem(`watchSeconds_${userId}`)) || 0;
+watchSeconds += 5;
+localStorage.setItem(`watchSeconds_${userId}`, watchSeconds);
+
+      lastTime = current;
+    }
+  }
+});
+
+
+
+// === Tambah ke My List ===
+
+/// === Tambah ke My List (per akun) ===
+const addToListBtn = document.querySelector('.add-to-list');
+addToListBtn.addEventListener('click', function() {
+  if (localStorage.getItem("isLoggedIn") === "true") {
+    const movieTitle = "Deadpool & Wolverine";
+    const userId = localStorage.getItem("userId");
+
+    // Favorite Movies (watchlist)
+    let favorites = JSON.parse(localStorage.getItem(`favoriteMovies_${userId}`)) || [];
+    if (!favorites.includes(movieTitle)) {
+      favorites.push(movieTitle);
+      localStorage.setItem(`favoriteMovies_${userId}`, JSON.stringify(favorites));
+      Swal.fire("Ditambahkan!", `"${movieTitle}" masuk ke My List.`, "success");
+    } else {
+      Swal.fire("Sudah ada!", `"${movieTitle}" sudah ada di My List kamu.`, "info");
+    }
+
+    // Watched Movies
+    let watched = JSON.parse(localStorage.getItem(`watchedMovies_${userId}`)) || [];
+    if (!watched.includes(movieTitle)) {
+      watched.push(movieTitle);
+      localStorage.setItem(`watchedMovies_${userId}`, JSON.stringify(watched));
+    }
+
+  } else {
+    Swal.fire("Login dulu", "Kamu harus login untuk menambahkan ke My List.", "warning");
+  }
+});
+
+
+  </script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("movieVideo");
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+    if (!isLoggedIn) {
+      video.addEventListener("timeupdate", function() {
+        if (video.currentTime >= 100) { // waktu diberi kesempatan pemutaran
+          video.pause();
+          
+          Swal.fire({
+            title: 'STOP!!', 
+            text: 'minimal Login dulu lah kalau mau nonton film..', 
+            imageUrl: 'stop cat.jpg', //ini gambarnya 
+            imageWidth: 200,
+            imageHeight: 200,
+            imageAlt: 'Stop cartoon',
+            confirmButtonText: 'Login Sekarang',
+            confirmButtonColor: '#d33'
+
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "login.html";
+            }
+          });
+        }
+      });
+    }
+  });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,823 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K8Stream</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome untuk gambar icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+ 
+</head>
+<body>
+  <!-- Navbar -->
+   <header class="main-header">
+    <nav class="navbar">
+      <div class="nav-brand">
+        <i class="fas fa-film"></i>
+        <span>K8Stream</span> 
+      </div>
+
+<div class="menu-toggle" id="menuToggle">
+  <i class="fas fa-bars"></i>
+</div>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="shows.html"> TV Shows</a></li>
+        <li><a href="premium.html">VIP</a></li>
+      </ul>   
+      <!-- Search dan Profile di kanan -->
+      <div class="nav-right">
+        <div class="search-bar">
+          <input type="text" placeholder="Cari film...">
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="profile-dropdown">
+  <div class="profile-trigger" onclick="toggleMenu()">
+    <img src="user.jpg" alt="Profile" class="profile-img">
+    <i class="fas fa-chevron-down"></i>
+    <a href="#" class="dropdown-item" onclick="logout()">
+  
+</a>
+
+  </div>
+  
+  <!-- Tambahkan menu dropdown di sini -->
+  <div class="dropdown-menu" id="subMenu">
+    <a href="profile.html" class="dropdown-item">
+      <i class="fas fa-user"></i>
+      <span>Profile</span>
+    </a>
+
+     <!--tambahkan menu dropdown login-->
+    <a href="login.html" class="dropdown-item" onclick="Login()">
+      <i class="fas fa-sign-in-alt"></i>
+      <span>log In</span>
+        
+   
+    <a href="#" class="dropdown-item" onclick="logout()">
+      <i class="fas fa-sign-out-alt"></i>
+      <span>Logout</span>
+
+      </a>
+   </a>
+
+      </div>
+
+  </div>
+
+</div>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+  <div class="slider">
+    <div class="slide active">
+      <img src="Big Hero 6.jpg" alt="Film 1">
+      <div class="info">
+        <h1>Big Hero 6</h1>
+        <div class="meta">
+          <span class="rating">⭐ 7.3 (IMDb)</span>
+          <span class="age">16+</span>
+          <span class="duration">2h 21min</span>
+        </div>
+        <p>Hiro Hamada, seorang remaja jenius, kehilangan kakaknya dalam sebuah tragedi. Bersama robot perawat lucu bernama Baymax dan teman-temannya, Hiro membentuk tim pahlawan super untuk mengungkap misteri di balik kehilangan itu.</p>
+        <button class="watch-trailer-btn" onclick="openTrailer('https://youtu.be/z3biFxZIJOQ?si=WV0b9CHj8HkfjxDd')">Watch Trailer</button>
+        <button>more details</button>
+      </div>
+    </div>
+   
+  </div>
+
+  <!-- Indikator Dots -->
+  <div class="hero-dots" id="heroDots"></div>
+</section>
+  <!-- Section Movies 1  -->
+  <section class="movies">
+  <h2>Popular Movies</h2>
+  <div class="movie-row">
+    <div class="movie-card-two">
+      <a href="deadpool&wolverine.html">
+      <img src="deadpool.jpg" alt="Deadpool & Wolverine">
+      <video id="movie" width="600" controls style="display:none;">
+      </a>  
+      </video>
+      <h3>Deadpool & Wolverine</h3>
+      <div class="meta">
+        <span>⭐ 8.2</span>
+        <span>18+</span>
+        <span>2h 7m</span>
+      </div>
+    </div>
+    <div class="movie-card-two">
+      <a href="bighero6.html">
+      <img src="Big Hero 6.jpg" alt="Big Hero 6" style="width:200px; border-radius:10px; cursor:pointer;">
+      <video id="movie" width="600" controls style="display:none;">
+        </a>
+</video>
+      <h3>Big Hero 6</h3>
+      <div class="meta">
+        <span>⭐ 7.8</span>
+        <span>7+</span>
+        <span>1h 42m</span>
+      </div>
+    </div>
+    <div class="movie-card-two">
+      <img src="fury.jpg" alt="Fury">
+      <h3>Fury</h3>
+      <div class="meta">
+        <span>⭐ 7.5</span>
+        <span>16+</span>
+        <span>2h 14m</span>
+      </div>
+    </div>
+    <div class="movie-card-two">
+      <img src="shangchi.jpg" alt="Shang-Chi">
+      <h3>Shang-Chi</h3>
+      <div class="meta">
+        <span>⭐ 7.4</span>
+        <span>13+</span>
+        <span>2h 12m</span>
+      </div>
+    </div>
+    <div class="movie-card-two">
+      <img src="udin.jpg" alt="Your Name">
+      <h3>kimi no namaewa udin!!!</h3>
+      <div class="meta">
+        <span>⭐ 8.4</span>
+        <span>PG</span>
+        <span>1h 52m</span>
+      </div>
+    </div>
+    <div class="movie-card-two">
+      <img src="zootopia.jpg" alt="Your Name">
+      <h3>Zootopia</h3>
+      <div class="meta">
+        <span>⭐ 8.1</span>
+        <span>7+</span>
+        <span>1h 52m</span>
+      </div>
+    </div>
+    <div class="movie-card-two">
+      <img src="conjuring.jpg" alt="Your Name">
+      <h3>The conjuring</h3>
+      <div class="meta">
+        <span>⭐ 8.4</span>
+        <span>18+</span>
+        <span>1h 22m</span>
+      </div>
+    </div>
+    <div class="movie-card-two">
+      <img src="galaxy.jpg" alt="Your Name">
+      <h3>guardian galaxy</h3>
+      <div class="meta">
+        <span>⭐ 8.2</span>
+        <span>13+</span>
+        <span>2h 50m</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Section Movies 2 -->
+  <section class="movies">
+  <h2>To Picks For You</h2>
+  <div class="movie-row">
+    <div class="movie-card-two">
+      <img src="flow.jpg" alt="flow">
+      <h3>flow</h3>
+      <div class="meta">
+        <span>⭐ 8.2</span>
+        <span>7+</span>
+        <span>1h 7m</span>
+      </div>
+    </div>
+    <div class="movie-card-two">
+      <img src="attack on titan.jpg" alt="  aot">
+      <h3>Attack on titan</h3>
+      <div class="meta">
+        <span>⭐ 7.8</span>
+        <span>15+</span>
+        <span>2h 42m</span>
+      </div>
+    </div>
+    <div class="movie-card-two">
+      <img src="oppenheimer.jpg" alt="oppenheimer">
+      <h3>oppenheimer</h3>
+      <div class="meta">
+        <span>⭐ 7.5</span>
+        <span>17+</span>
+        <span>2h 24m</span>
+      </div>
+    </div>
+    <div class="movie-card-two">
+      <img src="john wick.jpg" alt="john wick">
+      <h3>john wick</h3>
+      <div class="meta">
+        <span>⭐ 7.4</span>
+        <span>18+</span>
+        <span>1h 45m</span>
+      </div>
+    </div>
+    <div class="movie-card-two">
+      <img src="forest gump.jpg" alt="forest gump">
+      <h3>Forest gump</h3>
+      <div class="meta">
+        <span>⭐ 8.4</span>
+        <span>PG</span>
+        <span>18+</span>
+        <span>2h 34m</span>
+      </div>
+    </div>
+    <div class="movie-card-two">
+      <img src="Captain America-Civil War.jpg" alt="Captain America-Civil War">
+      <h3>Captain America-Civil War</h3>
+      <div class="meta">
+        <span>⭐ 8.1</span>
+        <span>15+</span>
+        <span>1h 52m</span>
+      </div>
+    </div>
+    <div class="movie-card-two">
+      <img src="all of us.jpg" alt="all of us">
+      <h3>all of us</h3>
+      <div class="meta">
+        <span>⭐ 8.4</span>
+        <span>18+</span>
+        <span>1h 45m</span>
+      </div>
+    </div>
+    <div class="movie-card-two">
+      <img src="interstellar.jpg" alt="interstellar">
+      <h3>interstellar</h3>
+      <div class="meta">
+        <span>⭐ 8.2</span>
+        <span>18+</span>
+        <span>2h 50m</span>
+      </div>
+    </div>
+  </div>
+
+    <div class="container">
+        <h1 class="section-title">
+            <i class="fas fa-film"></i> Best Film Recommendations
+        </h1>
+        
+        <div class="slider-container">
+            <div class="slider-wrapper" id="sliderWrapper">
+                <!-- Film 1 -->
+                <div class="movie-card">
+                    <div class="card-content">
+                        <div class="movie-poster">
+                            <img src="Inception (2010).jpg" alt="Inception">
+                        </div>
+                        <div class="movie-info">
+                            <h2 class="movie-title">Inception</h2>
+                            <div class="movie-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>2010</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>\\\\
+                                    <span>148 min</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>8.8/10</span>
+                                </div>
+                            </div>
+                            <div class="genre-tags">
+                                <span class="genre-tag">Sci-Fi</span>
+                                <span class="genre-tag">Action</span>
+                                <span class="genre-tag">Thriller</span>
+                            </div>
+                            <p class="movie-description">
+                                Seorang pencuri yang mahir dalam seni "ekstraksi" memasuki mimpi targetnya untuk mencuri rahasia dari alam bawah sadar mereka. Tugas terakhirnya adalah menanamkan ide ke dalam pikiran seseorang, sebuah misi yang dianggap mustahil.
+                            </p>
+                            <button class="watch-trailer-btn" onclick="openTrailer('https://www.youtube.com/watch?v=YoHD9XEInc0')">
+                                <i class="fas fa-play"></i>
+                                Watch Trailer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Film 2 -->
+                <div class="movie-card">
+                    <div class="card-content">
+                        <div class="movie-poster">
+                            <img src="interstellar.jpg" alt="Interstellar">
+                        </div>
+                        <div class="movie-info">
+                            <h2 class="movie-title">Interstellar</h2>
+                            <div class="movie-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>2014</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>169 min</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>8.6/10</span>
+                                </div>
+                            </div>
+                            <div class="genre-tags">
+                                <span class="genre-tag">Adventure</span>
+                                <span class="genre-tag">Drama</span>
+                                <span class="genre-tag">Sci-Fi</span>
+                            </div>
+                            <p class="movie-description">
+                                Sebuah tim penjelajah melakukan perjalanan melalui lubang cacing di ruang angkasa dalam upaya untuk memastikan kelangsungan hidup umat manusia di tengah krisis lingkungan yang mengancam Bumi.
+                            </p>
+                            <button class="watch-trailer-btn" onclick="openTrailer('https://www.youtube.com/watch?v=zSWdZVtXT7E')">
+                                <i class="fas fa-play"></i>
+                                Watch Trailer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Film 3 -->
+                <div class="movie-card">
+                    <div class="card-content">
+                        <div class="movie-poster">
+                            <img src="avatar.jpg" alt="Avatar">
+                        </div>
+                        <div class="movie-info">
+                            <h2 class="movie-title">Avatar</h2>
+                            <div class="movie-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>2009</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>162 min</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>7.8/10</span>
+                                </div>
+                            </div>
+                            <div class="genre-tags">
+                                <span class="genre-tag">Action</span>
+                                <span class="genre-tag">Adventure</span>
+                                <span class="genre-tag">Fantasy</span>
+                            </div> 
+                            <p class="movie-description">
+                                Seorang marinir lumpuh dikirim ke bulan Pandora untuk misi unik. Dia menjadi terbagi antara mengikuti perintah dan melindungi dunia yang dia rasakan adalah rumahnya.
+                            </p>
+                            <button class="watch-trailer-btn" onclick="openTrailer('https://www.youtube.com/watch?v=5PSNL1qE6VY')">
+                                <i class="fas fa-play"></i>
+                                Watch Trailer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Film 4 -->
+                <div class="movie-card">
+                    <div class="card-content">
+                        <div class="movie-poster">
+                            <img src="Joker Film Poster.jpg" alt="Joker">
+                        </div>
+                        <div class="movie-info">
+                            <h2 class="movie-title">Joker</h2>
+                            <div class="movie-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>2019</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>122 min</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>8.4/10</span>
+                                </div>
+                            </div>
+                            <div class="genre-tags">
+                                <span class="genre-tag">Crime</span>
+                                <span class="genre-tag">Drama</span>
+                                <span class="genre-tag">Thriller</span>
+                            </div>
+                            <p class="movie-description">
+                                Di Gotham City, komedian yang berjuang dengan gangguan mental memeluk kehidupan kejahatan dan kekacauan untuk melawan masyarakat yang mengabaikannya.
+                            </p>
+                            <button class="watch-trailer-btn" onclick="openTrailer('https://www.youtube.com/watch?v=zAGVQLHvwOY')">
+                                <i class="fas fa-play"></i>
+                                Watch Trailer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Film 5 -->
+                <div class="movie-card">
+                    <div class="card-content">
+                        <div class="movie-poster">
+                            <img src="Parasite.jpg" alt="Parasite">
+                        </div>
+                        <div class="movie-info">
+                            <h2 class="movie-title">Parasite</h2>
+                            <div class="movie-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>2019</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>132 min</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>8.5/10</span>
+                                </div>
+                            </div>
+                            <div class="genre-tags">
+                                <span class="genre-tag">Drama</span>
+                                <span class="genre-tag">Thriller</span>
+                                <span class="genre-tag">Comedy</span>
+                            </div>
+                            <p class="movie-description">
+                                Keluarga miskin yang licik menyusup ke rumah keluarga kaya dengan cara menjadi pekerja mereka, tetapi rencana mereka menjadi rumit ketika menemukan rahasia tak terduga.
+                            </p>
+                            <button class="watch-trailer-btn" onclick="openTrailer('https://www.youtube.com/watch?v=SEUXfv87Wpk')">
+                                <i class="fas fa-play"></i>
+                                Watch Trailer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Film 6 -->
+                <div class="movie-card">
+                    <div class="card-content">
+                        <div class="movie-poster">
+                            <img src="Dune.jpg" alt="Dune">
+                        </div>
+                        <div class="movie-info">
+                            <h2 class="movie-title">Dune</h2>
+                            <div class="movie-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>2021</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>155 min</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>8.0/10</span>
+                                </div>
+                            </div>
+                            <div class="genre-tags">
+                                <span class="genre-tag">Action</span>
+                                <span class="genre-tag">Adventure</span>
+                                <span class="genre-tag">Drama</span>
+                            </div>
+                            <p class="movie-description">
+                                Paul Atreides memimpin pasukan nomad untuk membebaskan dunia padang pasir Arrakis dari kekuasaan House Harkonnen yang kejam dan mengendalikan rempah paling berharga di alam semesta.
+                            </p>
+                            <button class="watch-trailer-btn" onclick="openTrailer('https://www.youtube.com/watch?v=8g18jFHCLXk')">
+                                <i class="fas fa-play"></i>
+                                Watch Trailer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-nav prev-btn" onclick="prevSlide()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-nav next-btn" onclick="nextSlide()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="slider-dots" id="sliderDots"></div>
+    </div>
+</section>
+<!-- sport/olahraga -->
+<section class="suggested-sports">
+  <div class="section-header">
+    <h2><i class="fas fa-trophy"></i> Suggested Sports</h2>
+    <div class="sports-nav">
+      <button class="sports-prev" onclick="scrollSports('left')">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="sports-next" onclick="scrollSports('right')">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+  <div class="sports-container" id="sportsContainer">
+    <!-- Cricket Card -->
+    <div class="sport-card">
+      <div class="sport-image">
+        <img src="cricket.jpg" alt="Cricket">
+        <div class="sport-overlay">
+          <button class="play-now-btn">
+            <i class="fas fa-play"></i> PLAY NOW
+          </button>
+        </div>
+      </div>
+      <div class="sport-info">
+        <h3>Cricket</h3>
+        <p class="sport-brand">ICC Sports</p>
+      </div>
+    </div>
+    <!-- Golf Card -->
+    <div class="sport-card">
+      <div class="sport-image">
+        <img src="golf.jpg" alt="Golf">
+        <div class="sport-overlay">
+          <button class="play-now-btn">
+            <i class="fas fa-play"></i> PLAY NOW
+          </button>
+        </div>
+      </div>
+      <div class="sport-info">
+        <h3>Golf</h3>
+        <p class="sport-brand">PGA Sports</p>
+      </div>
+    </div>
+    <!-- Basketball Card -->
+    <div class="sport-card">
+      <div class="sport-image">
+        <img src="basketball.jpg" alt="Basketball">
+        <div class="sport-overlay">
+          <button class="play-now-btn">
+            <i class="fas fa-play"></i> PLAY NOW
+          </button>
+        </div>
+      </div>
+      <div class="sport-info">
+        <h3>Basketball</h3>
+        <p class="sport-brand">NBA Sports</p>
+      </div>
+    </div>
+    <!-- Volleyball Card -->
+    <div class="sport-card">
+      <div class="sport-image">
+        <img src="volly.jpg" alt="Volleyball">
+        <div class="sport-overlay">
+          <button class="play-now-btn">
+            <i class="fas fa-play"></i> PLAY NOW
+          </button>
+        </div>
+      </div>
+      <div class="sport-info">
+        <h3>Volleyball</h3>
+        <p class="sport-brand">FIVB Sports</p>
+      </div>
+    </div>
+    <!-- Tennis Card -->
+    <div class="sport-card">
+      <div class="sport-image">
+        <img src="tennis.jpg" alt="Tennis">
+        <div class="sport-overlay">
+          <button class="play-now-btn">
+            <i class="fas fa-play"></i> PLAY NOW
+          </button>
+        </div>
+      </div>
+      <div class="sport-info">
+        <h3>Tennis</h3>
+        <p class="sport-brand">ATP Sports</p>
+      </div>
+    </div>
+    
+</section>
+<footer classrgt></footer>
+
+  <script>
+    feather.replace();
+  </script>
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 6;
+        let autoSlideInterval;
+
+        // Update slider position
+        function updateSlider() {
+            const sliderWrapper = document.getElementById('sliderWrapper');
+            sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Next slide
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+            resetAutoSlide();
+        }
+
+        // Previous slide
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+            resetAutoSlide();
+        }
+
+        // Go to specific slide
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+            resetAutoSlide();
+        }
+
+        // Start auto slide
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 10000); // Change slide every 10 seconds
+        }
+
+        // Reset auto slide timer
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        // Open trailer in new tab
+        function openTrailer(url) {
+            window.open(url, '_blank');
+        }
+
+        // Pause auto slide on hover
+        document.querySelector('.slider-container').addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+
+        document.querySelector('.slider-container').addEventListener('mouseleave', () => {
+            startAutoSlide();
+        });
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initSlider);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+    </script>
+    <script>
+  function logout() {
+    // Hapus data login dari localStorage / sessionStorage kalau ada
+    localStorage.removeItem("isLoggedIn"); 
+    sessionStorage.clear();
+
+    // Arahkan ke halaman login
+    window.location.href = "login.html";
+  }
+</script>
+  <script>
+    let subMenu = document.getElementById("subMenu");
+
+    function toggleMenu() {
+      subMenu.classList.toggle("open-menu");
+    }
+    
+  </script>
+  
+  <script src="https://kit.fontawesome.com/4f5cfe2f4b.js" crossorigin="anonymous"></script>
+  <script src="menu.js"></script>
+  
+   <!--kode tambahan fungsi search-->
+   <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Ambil elemen search
+    const searchInput = document.querySelector('.search-bar input');
+    const searchButton = document.querySelector('.search-bar button');
+    
+    // Ambil semua film cards
+    const movieCards = document.querySelectorAll('.movie-card-two');
+    const movieCardsSlider = document.querySelectorAll('.movie-card');
+    
+    // Fungsi pencarian
+    function searchMovies() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        
+        // Jika search kosong, tampilkan semua film
+        if (searchTerm === '') {
+            movieCards.forEach(card => {
+                card.style.display = 'block';
+            });
+            movieCardsSlider.forEach(card => {
+                card.style.display = 'block';
+            });
+            return;
+        }
+        
+        // Cari film yang cocok
+        movieCards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            if (title.includes(searchTerm)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        movieCardsSlider.forEach(card => {
+            const title = card.querySelector('.movie-title').textContent.toLowerCase();
+            if (title.includes(searchTerm)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    
+    // Event listener untuk tombol search
+    searchButton.addEventListener('click', searchMovies);
+    
+    // Event listener untuk Enter key di input search
+    searchInput.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            searchMovies();
+        }
+    });
+    
+    // Event listener untuk input saat mengetik (live search)
+    searchInput.addEventListener('input', function() {
+        // Tambahkan delay agar tidak terlalu sering mencari
+        clearTimeout(this.searchTimeout);
+        this.searchTimeout = setTimeout(searchMovies, 300);
+    });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menuToggle');
+  let mobileMenu;
+
+  // Hanya buat menu kalau layar kecil
+  function setupMobileMenu() {
+    if (window.innerWidth <= 900 && !mobileMenu) {
+      mobileMenu = document.createElement('div');
+      mobileMenu.classList.add('mobile-menu');
+      mobileMenu.innerHTML = `
+    
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="movies.html"><i class="fas fa-film"></i> Movies</a></li>
+       <li><a href="shows.html"><i class="fas fa-tv"></i> TV Shows</a></li>
+       <li><a href="premium.html"><i class="fas fa-crown"></i> VIP</a></li>
+        <hr style="border-color: rgba(255,255,255,0.1);">
+      <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+      <li><a href="login.html" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+        
+      `;
+      document.body.appendChild(mobileMenu);
+
+      // klik hamburger buat munculin menu
+      menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('active');
+      });
+
+      // klik di luar menu buat nutup
+      document.addEventListener('click', function (e) {
+        if (mobileMenu.classList.contains('active') &&
+            !mobileMenu.contains(e.target) &&
+            !menuToggle.contains(e.target)) {
+          mobileMenu.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  setupMobileMenu();
+
+  // kalau user resize layar (misal rotate HP)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900 && mobileMenu) {
+      mobileMenu.remove();
+      mobileMenu = null;
+    } else if (window.innerWidth <= 900 && !mobileMenu) {
+      setupMobileMenu();
+    }
+  });
+});
+</script>
+
+
+
+</body>
+</html>

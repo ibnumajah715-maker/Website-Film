@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranger Things - K8Stream</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="show-detail.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <i class="fas fa-film"></i>
+          <span>K8Stream</span>
+        </a>
+        
+       <div class="nav-menu">
+        <li> <a href="index.html">Home</a></li>
+        <li> <a href="movies.html">movies</a></li>
+        <li> <a href="shows.html" class="active">Tv Shows</a></li>
+        <li> <a href="premium.html">VIP</a></li>
+       </div>
+        
+        <div class="search-bar">
+          <input type="text" placeholder="Cari film series,...">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        
+        <div class="profile-dropdown">
+          <div class="profile-trigger">
+            <img src="user.jpg" alt="Profile" class="profile-img">
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Show Detail -->
+    <section class="show-detail">
+      <div class="show-header">
+        <div class="show-poster-container">
+          <div class="show-poster">
+            <img src="stranger.jpg" alt="Stranger Things">
+          </div>
+        </div>
+        
+        <div class="show-info">
+          <h1 class="show-title">Stranger Things</h1>
+          
+          <div class="show-meta">
+            <span class="show-rating"><i class="fas fa-star"></i> 8.7</span>
+            <span class="show-year">2016</span>
+            <span class="show-seasons">4 Seasons</span>
+            <span class="show-episodes">34 Episodes</span>
+            <span class="show-age">16+</span>
+          </div>
+          
+          <p class="show-description">
+            Ketika seorang anak laki-laki menghilang, kota kecilnya mengungkap misteri yang melibatkan eksperimen rahasia, kekuatan gaib yang menakutkan, dan satu gadis aneh. Serial ini mengikuti kisah sekelompok anak-anak yang menghadapi kekuatan supernatural di kota kecil Hawkins, Indiana.
+          </p>
+          
+          <div class="show-actions">
+            <button class="btn btn-play">
+              <i class="fas fa-play"></i> Play
+            </button>
+            <button class="btn btn-trailer" onclick="openTrailer ( 'https://youtu.be/a3thyAnShck?si=QLAnAV2PvHm-Jkun')"> Watch Trailer </button>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Episodes Section -->
+      <section class="episodes-section">
+        <div class="section-header">
+          <h2 class="section-title">Episodes</h2>
+          <div class="episode-filter">
+            <button class="filter-btn active" data-season="1">Season 1</button>
+            <button class="filter-btn" data-season="2">Season 2</button>
+            <button class="filter-btn" data-season="3">Season 3</button>
+            <button class="filter-btn" data-season="4">Season 4</button>
+          </div>
+        </div>
+        
+        <div class="episodes-grid" id="episodes-container">
+          <!-- Episode 1 (Free) -->
+          <div class="episode-card" data-episode="1">
+            <div class="episode-thumbnail">
+              <img src="episode 1.jpg" alt="Episode 1">
+              <div class="episode-overlay">
+                <div class="play-episode" onclick="playEpisode(1, 1)">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+            </div>
+            <div class="episode-info">
+              <div class="episode-number">Episode 1</div>
+              <h3 class="episode-title">The Vanishing of Will Byers</h3>
+              <div class="episode-runtime">47m</div>
+            </div>
+          </div>
+          
+          <!-- Episode 2 (Free) -->
+          <div class="episode-card" data-episode="2">
+            <div class="episode-thumbnail">
+              <img src="episode 2.jpg" alt="Episode 2">
+              <div class="episode-overlay">
+                <div class="play-episode" onclick="playEpisode(1, 2)">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+            </div>
+            <div class="episode-info">
+              <div class="episode-number">Episode 2</div>
+              <h3 class="episode-title">The Weirdo on Maple Street</h3>
+              <div class="episode-runtime">55m</div>
+            </div>
+          </div>
+          
+          <!-- Episode 3 (VIP Only) -->
+          <div class="episode-card locked-episode" data-episode="3">
+            <div class="episode-thumbnail">
+              <img src="stranger things eps 3 .jpg" alt="Episode 3">
+              <div class="locked-badge">
+                <i class="fas fa-lock"></i> VIP
+              </div>
+              <div class="vip-cta">
+                <h3>Episode Terkunci</h3>
+                <p>Upgrade ke VIP untuk menonton episode ini dan semua konten eksklusif lainnya</p>
+                <button class="btn btn-vip" onclick="openVipModal()">
+                  <i class="fas fa-crown"></i> Upgrade VIP
+                </button>
+              </div>
+            </div>
+            <div class="episode-info">
+              <div class="episode-number">Episode 3</div>
+              <h3 class="episode-title">Holly, Jolly</h3>
+              <div class="episode-runtime">51m</div>
+            </div>
+          </div>
+          
+          <!-- Episode 4 (VIP Only) -->
+          <div class="episode-card locked-episode" data-episode="4">
+            <div class="episode-thumbnail">
+              <img src="stranger things eps 4.jpg" alt="Episode 4">
+              <div class="locked-badge">
+                <i class="fas fa-lock"></i> VIP
+              </div>
+              <div class="vip-cta">
+                <h3>Episode Terkunci</h3>
+                <p>Upgrade ke VIP untuk menonton episode ini dan semua konten eksklusif lainnya</p>
+                <button class="btn btn-vip" onclick="openVipModal()">
+                  <i class="fas fa-crown"></i> Upgrade VIP
+                </button>
+              </div>
+            </div>
+            <div class="episode-info">
+              <div class="episode-number">Episode 4</div>
+              <h3 class="episode-title">The Body</h3>
+              <div class="episode-runtime">49m</div>
+            </div>
+          </div>
+          
+          <!-- Episode 5 (VIP Only) -->
+          <div class="episode-card locked-episode" data-episode="5">
+            <div class="episode-thumbnail">
+              <img src="stranger things 5 .jpg" alt="Episode 5">
+              <div class="locked-badge">
+                <i class="fas fa-lock"></i> VIP
+              </div>
+              <div class="vip-cta">
+                <h3>Episode Terkunci</h3>
+                <p>Upgrade ke VIP untuk menonton episode ini dan semua konten eksklusif lainnya</p>
+                <button class="btn btn-vip" onclick="openVipModal()">
+                  <i class="fas fa-crown"></i> Upgrade VIP
+                </button>
+              </div>
+            </div>
+            <div class="episode-info">
+              <div class="episode-number">Episode 5</div>
+              <h3 class="episode-title">The Flea and the Acrobat</h3>
+              <div class="episode-runtime">53m</div>
+            </div>
+          </div>
+          
+          <!-- Episode 6 (VIP Only) -->
+          <div class="episode-card locked-episode" data-episode="6">
+            <div class="episode-thumbnail">
+              <img src="stranger things 6.jpg" alt="Episode 6">
+              <div class="locked-badge">
+                <i class="fas fa-lock"></i> VIP
+              </div>
+              <div class="vip-cta">
+                <h3>Episode Terkunci</h3>
+                <p>Upgrade ke VIP untuk menonton episode ini dan semua konten eksklusif lainnya</p>
+                <button class="btn btn-vip" onclick="openVipModal()">
+                  <i class="fas fa-crown"></i> Upgrade VIP
+                </button>
+              </div>
+            </div>
+            <div class="episode-info">
+              <div class="episode-number">Episode 6</div>
+              <h3 class="episode-title">The Monster</h3>
+              <div class="episode-runtime">47m</div>
+            </div>
+          </div>
+          
+          <!-- Episode 7 (VIP Only) -->
+          <div class="episode-card locked-episode" data-episode="7">
+            <div class="episode-thumbnail">
+              <img src="stanger things 8 .jpg" alt="Episode 7">
+              <div class="locked-badge">
+                <i class="fas fa-lock"></i> VIP
+              </div>
+              <div class="vip-cta">
+                <h3>Episode Terkunci</h3>
+                <p>Upgrade ke VIP untuk menonton episode ini dan semua konten eksklusif lainnya</p>
+                <button class="btn btn-vip" onclick="openVipModal()">
+                  <i class="fas fa-crown"></i> Upgrade VIP
+                </button>
+              </div>
+            </div>
+            <div class="episode-info">
+              <div class="episode-number">Episode 7</div>
+              <h3 class="episode-title">The Bathtub</h3>
+              <div class="episode-runtime">45m</div>
+            </div>
+          </div>
+          
+          <!-- Episode 8 (VIP Only) -->
+          <div class="episode-card locked-episode" data-episode="8">
+            <div class="episode-thumbnail">
+              <img src="stranger things 9.jpg" alt="Episode 8">
+              <div class="locked-badge">
+                <i class="fas fa-lock"></i> VIP
+              </div>
+              <div class="vip-cta">
+                <h3>Episode Terkunci</h3>
+                <p>Upgrade ke VIP untuk menonton episode ini dan semua konten eksklusif lainnya</p>
+                <button class="btn btn-vip" onclick="openVipModal()">
+                  <i class="fas fa-crown"></i> Upgrade VIP
+                </button>
+              </div>
+            </div>
+            <div class="episode-info">
+              <div class="episode-number">Episode 8</div>
+              <h3 class="episode-title">The Upside Down</h3>
+              <div class="episode-runtime">55m</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+     
+  </main>
+
+  <!-- VIP Modal -->
+  <div class="modal" id="vip-modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeVipModal()">&times;</span>
+      
+      <div class="modal-header">
+        <h2>Upgrade ke VIP</h2>
+        <p>Buka semua episode dan nikmati fitur eksklusif</p>
+      </div>
+      
+      <div class="modal-body">
+        <p>Dengan VIP, Anda dapat:</p>
+        
+        <ul class="vip-features-list">
+          <li><i class="fas fa-check"></i> Akses tak terbatas ke semua episode</li>
+          <li><i class="fas fa-check"></i> Download offline untuk menonton tanpa internet</li>
+          <li><i class="fas fa-check"></i> Kualitas streaming hingga 4K Ultra HD</li>
+          <li><i class="fas fa-check"></i> Bebas iklan</li>
+          <li><i class="fas fa-check"></i> Akses ke konten eksklusif</li>
+        </ul>
+        
+        <p>Hanya dengan <strong>Rp 49.000/bulan</strong></p>
+      </div>
+      
+      <div class="modal-footer">
+        <button class="btn btn-vip" onclick="window.location.href='vip.html'">
+          <i class="fas fa-crown"></i> Upgrade Sekarang
+        </button>
+        <button class="btn btn-cancel" onclick="closeVipModal()">Nanti Saja</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 K8Stream. All rights reserved.</p>
+    </div>
+  </footer>
+
+  
+  <script>
+      // === CEK STATUS VIP DAN BUKA SEMUA EPISODE TERKUNCI ===
+ document.addEventListener('DOMContentLoaded', () => {
+  const userId = localStorage.getItem('userId');
+  const isVipUser = localStorage.getItem(`vipStatus_${userId}`) === 'true';
+
+  if (isVipUser) {
+
+    // Tambahkan badge VIP di profil
+    const profileTrigger = document.querySelector('.profile-trigger');
+    if (profileTrigger && !profileTrigger.querySelector('.vip-badge')) {
+      profileTrigger.innerHTML += `
+        <span class="vip-badge">
+          <i class="fas fa-crown"></i> VIP
+        </span>
+      `;
+    }
+
+    // Buka semua episode terkunci
+    document.querySelectorAll('.locked-episode').forEach(ep => {
+      ep.classList.remove('locked-episode');
+      const overlay = ep.querySelector('.vip-cta');
+      const badge = ep.querySelector('.locked-badge');
+      if (overlay) overlay.remove();
+      if (badge) badge.remove();
+
+      const overlayPlay = document.createElement('div');
+      overlayPlay.className = 'episode-overlay';
+      overlayPlay.innerHTML = `
+        <div class="play-episode" onclick="playEpisode(1, ${ep.dataset.episode})">
+          <i class="fas fa-play"></i>
+        </div>`;
+      ep.querySelector('.episode-thumbnail').appendChild(overlayPlay);
+    });
+  }
+});
+
+
+    const isVipUser = localStorage.getItem('isVipUser') === 'true';
+  if (isVipUser) {
+    const profileTrigger = document.querySelector('.profile-trigger');
+    profileTrigger.innerHTML += `
+      <span class="vip-badge">
+        <i class="fas fa-crown"></i> VIP
+      </span>
+    `;
+  }
+    // Episode filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const episodesContainer = document.getElementById('episodes-container');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // Filter episodes by season
+        const season = this.dataset.season;
+        filterEpisodesBySeason(season);
+      });
+    });
+    
+  // Function to filter episodes by season
+function filterEpisodesBySeason(season) {
+  // 1. Pastikan baris ini ada di paling atas fungsi
+  const isVip = localStorage.getItem('isVipUser') === 'true';
+
+  // Show loading state
+  episodesContainer.innerHTML = '<div class="loading">Loading episodes...</div>';
+  
+  // Simulate loading delay
+  setTimeout(() => {
+    episodesContainer.innerHTML = '';
+    
+    let episodeCount = 8; // Default episode count
+    
+    if (season === '1') {
+      episodeCount = 8;
+    } else if (season === '2') {
+      episodeCount = 9;
+    } else if (season === '3') {
+      episodeCount = 8;
+    } else if (season === '4') {
+      episodeCount = 9;
+    }
+    
+    // Generate episode cards
+    for (let i = 1; i <= episodeCount; i++) {
+      const episodeCard = document.createElement('div');
+      
+      // 2. INI BAGIAN PALING PENTING
+      //    Logikanya adalah: jadi pas dibuka episode 1-2 ATAU jika pengguna adalah VIP.
+      if (i <= 2 || isVip) {
+        episodeCard.className = 'episode-card';
+        episodeCard.innerHTML = `
+          <div class="episode-thumbnail">
+            <img src="episode ${i}.jpg" alt="Episode ${i}">
+            <div class="episode-overlay">
+              <div class="play-episode" onclick="playEpisode(${season}, ${i})">
+                <i class="fas fa-play"></i>
+              </div>
+            </div>
+          </div>
+          <div class="episode-info">
+            <div class="episode-number">Episode ${i}</div>
+            <h3 class="episode-title">Episode Title ${i}</h3>
+            <div class="episode-runtime">${45 + Math.floor(Math.random() * 15)}m</div>
+          </div>
+        `;
+      } else { // Jika bukan VIP dan episode > 2, episode tetap terkunci.
+        episodeCard.className = 'episode-card locked-episode';
+        episodeCard.innerHTML = `
+          <div class="episode-thumbnail">
+            <img src="stranger things eps ${i}.jpg" alt="Episode ${i}">
+            <div class="locked-badge">
+              <i class="fas fa-lock"></i> VIP
+            </div>
+            <div class="vip-cta">
+              <h3>Episode Terkunci</h3>
+              <p>Upgrade ke VIP untuk menonton episode ini dan semua konten eksklusif lainnya</p>
+              <button class="btn btn-vip" onclick="openVipModal()">
+                <i class="fas fa-crown"></i> Upgrade VIP
+              </button>
+            </div>
+          </div>
+          <div class="episode-info">
+            <div class="episode-number">Episode ${i}</div>
+            <h3 class="episode-title">Episode Title ${i}</h3>
+            <div class="episode-runtime">${45 + Math.floor(Math.random() * 15)}m</div>
+          </div>
+        `;
+      }
+      
+      episodesContainer.appendChild(episodeCard);
+    }
+  }, 500);
+}
+    // Function to play episode
+    function playEpisode(season, episode) {
+      // In a real application, you would navigate to the video player
+      alert(`Playing Season ${season}, Episode ${episode}`);
+    }
+    
+    // VIP Modal functionality
+    function openVipModal() {
+      document.getElementById('vip-modal').style.display = 'flex';
+    }
+    
+    function closeVipModal() {
+      document.getElementById('vip-modal').style.display = 'none';
+    }
+    
+     // Open trailer in new tab
+        function openTrailer(url) {
+            window.open(url, '_blank');
+        }
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+      const modal = document.getElementById('vip-modal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+    
+    // Function to navigate to show detail page
+    function navigateToShow(showId) {
+      // In a real application, you would navigate to the specific show page
+      window.location.href = `show-detail.html?id=${showId}`;
+    }
+    
+    // Play button functionality
+    const playButton = document.querySelector('.btn-play');
+    if (playButton) {
+      playButton.addEventListener('click', function() {
+        // In a real application, you would navigate to the video player
+        alert('Playing first episode...');
+      });
+    }
+    
+    // Trailer button functionality
+    const trailerButton = document.querySelector('.btn-trailer');
+    if (trailerButton) {
+      trailerButton.addEventListener('click', function() {
+        // In a real application, you would open the trailer in a modal or navigate to a trailer page
+        alert('Playing trailer...');
+      });
+    }
+  </script>
+  
+</body>
+</html>

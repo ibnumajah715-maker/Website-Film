@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TV Shows - K8Stream</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shows.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+           <div id="menuToggle" class="menu-toggle">
+  <i class="fas fa-bars"></i>
+</div>
+        <a href="index.html" class="logo">
+          <i class="fas fa-film"></i>
+          <span>K8Stream</span>
+        </a>
+
+     
+        
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="shows.html" class="active">TV Shows</a></li>
+          <li><a href="premium.html">VIP</a></li>
+        </ul>
+        
+        <div class="search-bar">
+          <input type="text" placeholder="Cari film series,...">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        
+        <div class="profile-dropdown">
+          <div class="profile-trigger">
+            <img src="user.jpg" alt="Profile" class="profile-img">
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Featured Show (Hero Section) -->
+    <section class="featured-show">
+      <div class="featured-content">
+        <h1 class="featured-title">Stranger Things</h1>
+      
+        <div class="featured-meta">
+          <span class="featured-rating"><i class="fas fa-star"></i> 8.7</span>
+          <span class="featured-year">2016</span>
+          <span class="featured-seasons">4 Seasons</span>
+          <span class="featured-age">16+</span>
+        </div>
+        <p class="featured-description">
+          Ketika seorang anak laki-laki menghilang, kota kecilnya mengungkap misteri yang melibatkan eksperimen rahasia, kekuatan gaib yang menakutkan, dan satu gadis aneh.
+        </p>
+        <div class="featured-buttons">
+          <button class="play-button">
+            <i class="fas fa-play"></i> Play
+          </button>
+          <button class="info-button">
+            <i class="fas fa-info-circle"></i> More Info
+          </button>
+        </div>
+      </div>
+      <div class="featured-backdrop"></div>
+      
+      <!-- Featured Show Slider Dots -->
+      <div class="featured-dots">
+        <span class="dot active" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </section>
+
+    <!-- Category Navigation -->
+    <div class="category-nav">
+      <div class="category-list">
+        <div class="category-item active" data-category="all">Semua</div>
+        <div class="category-item" data-category="action">Action</div>
+        <div class="category-item" data-category="comedy">Comedy</div>
+        <div class="category-item" data-category="drama">Drama</div>
+        <div class="category-item" data-category="scifi">Sci-Fi</div>
+        <div class="category-item" data-category="thriller">Thriller</div>
+        <div class="category-item" data-category="horror">Horror</div>
+        <div class="category-item" data-category="fantasy">Fantasy</div>
+        <div class="category-item" data-category="crime">Crime</div>
+        <div class="category-item" data-category="animation">Animation</div>
+      </div>
+    </div>
+
+    <!-- Continue Watching -->
+    <section class="show-section">
+      <div class="section-header">
+        <h2 class="section-title">Lanjutkan Menonton</h2>
+        <div class="slider-nav">
+          <button class="slider-btn prev-btn" onclick="moveSlider('continue-watching', 'prev')">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="slider-btn next-btn" onclick="moveSlider('continue-watching', 'next')">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="shows-row" id="continue-watching">
+
+     <div class="show-card continue-watching" data-category="drama" data-show-id="breaking-bad">
+  <div class="show-poster">
+    <img src="stranger.jpg" alt="Breaking Bad">
+    <div class="show-progress">
+      <div class="progress-bar" style="width: 65%"></div>
+    </div>
+  </div>
+  <div class="show-info">
+    <h3 class="show-title">Stranger Things</h3>
+    <div class="show-meta">
+      <span>S1:E02</span>
+      <span>45m</span>
+    </div>
+  </div>
+</div>
+        <div class="show-card continue-watching" data-category="scifi">
+          <div class="show-poster">
+            <img src="westworld.jpg" alt="Westworld">
+            <div class="show-progress">
+              <div class="progress-bar" style="width: 30%"></div>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">Westworld</h3>
+            <div class="show-meta">
+              <span>S3:E5</span>
+              <span>58m</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="show-card continue-watching" data-category="thriller">
+          <div class="show-poster">
+            <img src="mindhunter2.jpg" alt="Mindhunter">
+            <div class="show-progress">
+              <div class="progress-bar" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">Mindhunter</h3>
+            <div class="show-meta">
+              <span>S2:E7</span>
+              <span>56m</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="show-card continue-watching" data-category="fantasy">
+          <div class="show-poster">
+            <img src="gameofthones.jpg" alt="Game of Thrones">
+            <div class="show-progress">
+              <div class="progress-bar" style="width: 45%"></div>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">Game of Thrones</h3>
+            <div class="show-meta">
+              <span>S7:E3</span>
+              <span>63m</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="show-card continue-watching" data-category="comedy">
+          <div class="show-poster">
+            <img src="the office.jpg" alt="The Office">
+            <div class="show-progress">
+              <div class="progress-bar" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">The Office</h3>
+            <div class="show-meta">
+              <span>S9:E15</span>
+              <span>22m</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="show-card continue-watching" data-category="drama">
+          <div class="show-poster">
+            <img src="the crown.jpg" alt="The Crown">
+            <div class="show-progress">
+              <div class="progress-bar" style="width: 25%"></div>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">The Crown</h3>
+            <div class="show-meta">
+              <span>S5:E2</span>
+              <span>60m</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="show-card continue-watching" data-category="action">
+          <div class="show-poster">
+            <img src="mandalorian.jpg" alt="The Mandalorian">
+            <div class="show-progress">
+              <div class="progress-bar" style="width: 70%"></div>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">The Mandalorian</h3>
+            <div class="show-meta">
+              <span>S2:E5</span>
+              <span>40m</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="show-card continue-watching" data-category="scifi">
+          <div class="show-poster">
+            <img src="stranger.jpg" alt="Stranger Things">
+            <div class="show-progress">
+              <div class="progress-bar" style="width: 50%"></div>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">Stranger Things</h3>
+            <div class="show-meta">
+              <span>S4:E4</span>
+              <span>55m</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Now -->
+    <section class="show-section">
+      <div class="section-header">
+        <h2 class="section-title">Sedang Trending</h2>
+        <div class="slider-nav">
+          <button class="slider-btn prev-btn" onclick="moveSlider('trending', 'prev')">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="slider-btn next-btn" onclick="moveSlider('trending', 'next')">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="shows-row" id="trending">
+        <div class="show-card" data-category="drama">
+          <div class="show-poster">
+            <img src="the crown.jpg" alt="The Crown">
+            <div class="show-overlay">
+              <button class="play-btn"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">The Crown</h3>
+            <div class="show-meta">
+              <span>2022</span>
+              <span>5 Seasons</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="show-card" data-category="fantasy">
+          <div class="show-poster">
+            <img src="dragon.jpg" alt="House of the Dragon">
+            <div class="show-overlay">
+              <button class="play-btn"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">House of the Dragon</h3>
+            <div class="show-meta">
+              <span>2022</span>
+              <span>1 Season</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="show-card" data-category="scifi">
+          <div class="show-poster">
+            <img src="stranger.jpg" alt="Stranger Things">
+            <div class="show-overlay">
+              <button class="play-btn"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">Stranger Things</h3>
+            <div class="show-meta">
+              <span>2016</span>
+              <span>4 Seasons</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="show-card" data-category="drama">
+          <div class="show-poster">
+            <img src="better call saul.jpg" alt="Better Call Saul">
+            <div class="show-overlay">
+              <button class="play-btn"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">Better Call Saul</h3>
+            <div class="show-meta">
+              <span>2015</span>
+              <span>6 Seasons</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- New Releases -->
+    <section class="show-section">
+      <div class="section-header">
+        <h2 class="section-title">Rilis Baru</h2>
+        <div class="slider-nav">
+          <button class="slider-btn prev-btn" onclick="moveSlider('new-releases', 'prev')">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="slider-btn next-btn" onclick="moveSlider('new-releases', 'next')">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="shows-row" id="new-releases">
+        
+        <div class="show-card" data-category="fantasy">
+          <div class="show-poster">
+            <img src="dragon.jpg" alt="House of the Dragon">
+            <div class="show-badge new">NEW</div>
+            <div class="show-overlay">
+              <button class="play-btn"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">House of the Dragon</h3>
+            <div class="show-meta">
+              <span>2022</span>
+              <span>1 Season</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="show-card" data-category="scifi">
+          <div class="show-poster">
+            <img src="ANDOR (2022).jpg" alt="Andor">
+            <div class="show-badge new">NEW</div>
+            <div class="show-overlay">
+              <button class="play-btn"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">Andor</h3>
+            <div class="show-meta">
+              <span>2022</span>
+              <span>1 Season</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="show-card" data-category="drama">
+          <div class="show-poster">
+            <img src="sandman.jpg" alt="The Sandman">
+            <div class="show-badge new">NEW</div>
+            <div class="show-overlay">
+              <button class="play-btn"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">The Sandman</h3>
+            <div class="show-meta">
+              <span>2022</span>
+              <span>1 Season</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="show-card" data-category="comedy">
+          <div class="show-poster">
+            <img src="SHE-HULK (2022).jpg" alt="She-Hulk: Attorney at Law">
+            <div class="show-badge new">NEW</div>
+            <div class="show-overlay">
+              <button class="play-btn"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">She-Hulk: Attorney at Law</h3>
+            <div class="show-meta">
+              <span>2022</span>
+              <span>1 Season</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="show-card" data-category="action">
+          <div class="show-poster">
+            <img src="msmarvel.jpg" alt="Ms. Marvel">
+            <div class="show-badge new">NEW</div>
+            <div class="show-overlay">
+              <button class="play-btn"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">Ms. Marvel</h3>
+            <div class="show-meta">
+              <span>2022</span>
+              <span>1 Season</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="show-card" data-category="scifi">
+          <div class="show-poster">
+            <img src="Moon Knight Finale Movie Film Poster.jpg" alt="Moon Knight">
+            <div class="show-badge new">NEW</div>
+            <div class="show-overlay">
+              <button class="play-btn"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">Moon Knight</h3>
+            <div class="show-meta">
+              <span>2022</span>
+              <span>1 Season</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="show-card" data-category="action">
+          <div class="show-poster">
+            <img src="hawkeye.jpg" alt="Hawkeye">
+            <div class="show-badge new">NEW</div>
+            <div class="show-overlay">
+              <button class="play-btn"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <div class="show-info">
+            <h3 class="show-title">Hawkeye</h3>
+            <div class="show-meta">
+              <span>2021</span>
+              <span>1 Season</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+
+   
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 K8Stream. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Featured show slider
+    let slideIndex = 1;
+    let slideInterval;
+    
+    // Auto-advance featured show slider
+    function autoSlide() {
+      slideIndex++;
+      if (slideIndex > 3) {
+        slideIndex = 1;
+      }
+      currentSlide(slideIndex);
+    }
+    
+    // Start auto-slide
+    function startAutoSlide() {
+      slideInterval = setInterval(autoSlide, 5000); // Change slide every 5 seconds
+    }
+    
+    // Stop auto-slide
+    function stopAutoSlide() {
+      clearInterval(slideInterval);
+    }
+    
+    // Navigate to specific slide
+    function currentSlide(n) {
+      showSlide(slideIndex = n);
+    }
+    
+    // Show specific slide
+    function showSlide(n) {
+      // In a real application, you would change the featured content here
+      // For this example, we'll just update the dots
+      const dots = document.querySelectorAll(".dot");
+      if (n > dots.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = dots.length}
+      
+      // Update active dot
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[slideIndex-1].classList.add("active");
+      
+      // Update featured content based on slide index
+      updateFeaturedContent(slideIndex);
+    }
+    
+    // Update featured content based on slide index
+    function updateFeaturedContent(index) {
+      const featuredTitle = document.querySelector('.featured-title');
+      const featuredDescription = document.querySelector('.featured-description');
+      const featuredMeta = document.querySelector('.featured-meta');
+      const featuredBackdrop = document.querySelector('.featured-backdrop');
+      
+      if (index === 1) {
+        featuredTitle.textContent = "Stranger Things";
+        featuredDescription.textContent = "Ketika seorang anak laki-laki menghilang, kota kecilnya mengungkap misteri yang melibatkan eksperimen rahasia, kekuatan gaib yang menakutkan, dan satu gadis aneh.";
+        featuredMeta.innerHTML = `
+          <span class="featured-rating"><i class="fas fa-star"></i> 8.7</span>
+          <span class="featured-year">2016</span>
+          <span class="featured-seasons">4 Seasons</span>
+          <span class="featured-age">16+</span>
+        `;
+        featuredBackdrop.style.backgroundImage = `linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%), url('stranger things 5 .jpg')`;
+      } else if (index === 2) {
+        featuredTitle.textContent = "House of the Dragon";
+        featuredDescription.textContent = "Prekuel dari Game of Thrones yang menceritakan kisah House Targaryen, 200 tahun sebelum peristiwa dalam seri aslinya.";
+        featuredMeta.innerHTML = `
+          <span class="featured-rating"><i class="fas fa-star"></i> 8.5</span>
+          <span class="featured-year">2022</span>
+          <span class="featured-seasons">1 Season</span>
+          <span class="featured-age">18+</span>
+        `;
+        featuredBackdrop.style.backgroundImage = `linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%), url('dragon.jpg')`;
+      } else if (index === 3) {
+        featuredTitle.textContent = "The Lord of the Rings: The Rings of Power";
+        featuredDescription.textContent = "Ribuan tahun sebelum peristiwa The Hobbit dan The Lord of the Rings, epik ini kembali ke era kedamaian di Middle-earth.";
+        featuredMeta.innerHTML = `
+          <span class="featured-rating"><i class="fas fa-star"></i> 8.2</span>
+          <span class="featured-year">2022</span>
+          <span class="featured-seasons">1 Season</span>
+          <span class="featured-age">13+</span>
+        `;
+        featuredBackdrop.style.backgroundImage = `linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%), url('theblordthings.jpg')')`;
+      }
+    }
+    
+    // Start auto-slide on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      startAutoSlide();
+      
+      // Pause auto-slide on hover
+      const featuredShow = document.querySelector('.featured-show');
+      featuredShow.addEventListener('mouseenter', stopAutoSlide);
+      featuredShow.addEventListener('mouseleave', startAutoSlide);
+    });
+
+    // Category filtering
+    const categoryItems = document.querySelectorAll('.category-item');
+    categoryItems.forEach(item => {
+      item.addEventListener('click', function() {
+        // Remove active class from all items
+        categoryItems.forEach(cat => cat.classList.remove('active'));
+        
+        // Add active class to clicked item
+        this.classList.add('active');
+        
+        // Filter shows by category
+        const category = this.dataset.category;
+        filterShows(category);
+      });
+    });
+
+    // Function to filter shows by category
+    function filterShows(category) {
+      const allShows = document.querySelectorAll('.show-card');
+      
+      allShows.forEach(show => {
+        if (category === 'all' || show.dataset.category === category) {
+          show.style.display = 'block';
+        } else {
+          show.style.display = 'none';
+        }
+      });
+    }
+
+    // Genre tabs
+    const genreTabs = document.querySelectorAll('.genre-tab');
+    const genreContent = document.getElementById('genre-content');
+    
+    genreTabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        genreTabs.forEach(t => t.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Load content based on genre
+        const genre = this.dataset.genre;
+        loadGenreContent(genre);
+      });
+    });
+
+    // Function to load content based on genre
+    function loadGenreContent(genre) {
+      // In a real application, you would fetch data from a server
+      // For this example, we'll just change the content based on the selected genre
+      
+      let contentHTML = '';
+      
+      if (genre === 'action') {
+        contentHTML = `
+          <div class="show-card" data-category="action">
+            <div class="show-poster">
+              <img src="" alt="The Mandalorian">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="shomandolarian2.jpgw-title">The Mandalorian</h3>
+              <div class="show-meta">
+                <span>2019</span>
+                <span>3 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="action">
+            <div class="show-poster">
+              <img src="the" alt="The Falcon and the Winter Soldier">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">The Falcon and the Winter Soldier</h3>
+              <div class="show-meta">
+                <span>2021</span>
+                <span>1 Season</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="action">
+            <div class="show-poster">
+              <img src="" alt="WandaVision">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">WandaVision</h3>
+              <div class="show-meta">
+                <span>2021</span>
+                <span>1 Season</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="action">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/loki/300/450.jpg" alt="Loki">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Loki</h3>
+              <div class="show-meta">
+                <span>2021</span>
+                <span>1 Season</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="action">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/hawkeye/300/450.jpg" alt="Hawkeye">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Hawkeye</h3>
+              <div class="show-meta">
+                <span>2021</span>
+                <span>1 Season</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="action">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/moonknight/300/450.jpg" alt="Moon Knight">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Moon Knight</h3>
+              <div class="show-meta">
+                <span>2022</span>
+                <span>1 Season</span>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (genre === 'comedy') {
+        contentHTML = `
+          <div class="show-card" data-category="comedy">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/theoffice2/300/450.jpg" alt="The Office">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">The Office</h3>
+              <div class="show-meta">
+                <span>2005</span>
+                <span>9 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="comedy">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/friends/300/450.jpg" alt="Friends">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Friends</h3>
+              <div class="show-meta">
+                <span>1994</span>
+                <span>10 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="comedy">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/brooklyn99/300/450.jpg" alt="Brooklyn Nine-Nine">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Brooklyn Nine-Nine</h3>
+              <div class="show-meta">
+                <span>2013</span>
+                <span>8 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="comedy">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/parksandrec/300/450.jpg" alt="Parks and Recreation">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Parks and Recreation</h3>
+              <div class="show-meta">
+                <span>2009</span>
+                <span>7 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="comedy">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/tedlasso/300/450.jpg" alt="Ted Lasso">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Ted Lasso</h3>
+              <div class="show-meta">
+                <span>2020</span>
+                <span>3 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="comedy">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/seinfeld/300/450.jpg" alt="Seinfeld">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Seinfeld</h3>
+              <div class="show-meta">
+                <span>1989</span>
+                <span>9 Seasons</span>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (genre === 'drama') {
+        contentHTML = `
+          <div class="show-card" data-category="drama">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/breakingbad3/300/450.jpg" alt="Breaking Bad">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Breaking Bad</h3>
+              <div class="show-meta">
+                <span>2008</span>
+                <span>5 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="drama">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/thecrown3/300/450.jpg" alt="The Crown">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">The Crown</h3>
+              <div class="show-meta">
+                <span>2016</span>
+                <span>5 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="drama">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/ozark2/300/450.jpg" alt="Ozark">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Ozark</h3>
+              <div class="show-meta">
+                <span>2017</span>
+                <span>4 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="drama">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/bettercallsaul2/300/450.jpg" alt="Better Call Saul">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Better Call Saul</h3>
+              <div class="show-meta">
+                <span>2015</span>
+                <span>6 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="drama">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/succession/300/450.jpg" alt="Succession">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Succession</h3>
+              <div class="show-meta">
+                <span>2018</span>
+                <span>4 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="drama">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/thewire/300/450.jpg" alt="The Wire">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">The Wire</h3>
+              <div class="show-meta">
+                <span>2002</span>
+                <span>5 Seasons</span>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (genre === 'scifi') {
+        contentHTML = `
+          <div class="show-card" data-category="scifi">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/strangerthings3/300/450.jpg" alt="Stranger Things">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Stranger Things</h3>
+              <div class="show-meta">
+                <span>2016</span>
+                <span>4 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="scifi">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/westworld2/300/450.jpg" alt="Westworld">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Westworld</h3>
+              <div class="show-meta">
+                <span>2016</span>
+                <span>4 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="scifi">
+            <div class="show-poster">
+              <img src="https://picsum.photos/seed/blackmirror/300/450.jpg" alt="Black Mirror">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Black Mirror</h3>
+              <div class="show-meta">
+                <span>2011</span>
+                <span>6 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="scifi">
+            <div class="show-poster">
+              <img src="" alt="Altered Carbon">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Altered Carbon</h3>
+              <div class="show-meta">
+                <span>2018</span>
+                <span>2 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="scifi">
+            <div class="show-poster">
+              <img src="" alt="The Expanse">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">The Expanse</h3>
+              <div class="show-meta">
+                <span>2015</span>
+                <span>6 Seasons</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card" data-category="scifi">
+            <div class="show-poster">
+              <img src="" alt="Dark">
+              <div class="show-overlay">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+            <div class="show-info">
+              <h3 class="show-title">Dark</h3>
+              <div class="show-meta">
+                <span>2017</span>
+                <span>3 Seasons</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      
+      genreContent.innerHTML = contentHTML;
+      
+      // Re-attach event listeners to play buttons
+      attachPlayButtonListeners();
+    }
+
+    // Function to move slider manually
+    function moveSlider(sliderId, direction) {
+      const slider = document.getElementById(sliderId);
+      const scrollAmount = 220; // Width of show card + gap
+      
+      if (direction === 'next') {
+        slider.scrollBy({
+          left: scrollAmount,
+          behavior: 'smooth'
+        });
+      } else {
+        slider.scrollBy({
+          left: -scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    // Auto-scroll for show rows
+    function setupAutoScroll() {
+      const sliders = document.querySelectorAll('.shows-row');
+      
+      sliders.forEach(slider => {
+        // Skip genre-content slider as it's handled differently
+        if (slider.id === 'genre-content') return;
+        
+        let scrollInterval;
+        let scrollDirection = 'next';
+        let scrollTimeout;
+        
+        // Function to start auto-scroll
+        function startAutoScroll() {
+          scrollInterval = setInterval(() => {
+            const scrollAmount = 220; // Width of show card + gap
+            
+            if (scrollDirection === 'next') {
+              // If we've reached the end, reverse direction
+              if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
+                scrollDirection = 'prev';
+              }
+              slider.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+              });
+            } else {
+              // If we've reached the beginning, reverse direction
+              if (slider.scrollLeft <= 10) {
+                scrollDirection = 'next';
+              }
+              slider.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+              });
+            }
+          }, 3000); // Change slide every 3 seconds
+        }
+        
+        // Function to stop auto-scroll
+        function stopAutoScroll() {
+          clearInterval(scrollInterval);
+          clearTimeout(scrollTimeout);
+        }
+        
+        // Start auto-scroll
+        startAutoScroll();
+        
+        // Pause auto-scroll on hover
+        slider.addEventListener('mouseenter', () => {
+          stopAutoScroll();
+        });
+        
+        // Resume auto-scroll after mouse leaves
+        slider.addEventListener('mouseleave', () => {
+          scrollTimeout = setTimeout(startAutoScroll, 1000); // Wait 1 second before resuming
+        });
+      });
+    }
+    
+    // Setup auto-scroll on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      setupAutoScroll();
+    });
+
+    // Function to attach event listeners to play buttons
+    function attachPlayButtonListeners() {
+      const playButtons = document.querySelectorAll('.play-btn');
+      playButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // In a real application, you would navigate to the show's page
+          alert('Playing show...');
+        });
+      });
+    }
+
+    // Initialize event listeners for play buttons
+    attachPlayButtonListeners();
+
+    // Featured show play button
+    const playButton = document.querySelector('.play-button');
+    if (playButton) {
+      playButton.addEventListener('click', function() {
+        // In a real application, you would navigate to the show's page
+        alert('Playing featured show...');
+      });
+    }
+
+    // Featured show info button
+    const infoButton = document.querySelector('.info-button');
+    if (infoButton) {
+      infoButton.addEventListener('click', function() {
+        // In a real application, you would navigate to the show's details page
+        alert('Showing more info about featured show...');
+      });
+    }
+    // Function to open show detail page
+function openShowDetail(showId) {
+  // In a real application, you would navigate to the specific show page
+  window.location.href = `show-detail.html?id=${showId}`;
+}
+
+// Add click event to show cards
+document.addEventListener('DOMContentLoaded', function() {
+  const showCards = document.querySelectorAll('.show-card');
+  
+  showCards.forEach(card => {
+    card.addEventListener('click', function() {
+      // Get show ID from data attribute or use a default
+      const showId = this.dataset.showId || 'stranger-things';
+      openShowDetail(showId);
+    });
+  });
+  
+  // Add data-show-id attributes to show cards (for demonstration)
+  const showCardsWithIds = document.querySelectorAll('.show-card');
+  showCardsWithIds.forEach((card, index) => {
+    // Assign different show IDs based on the show title
+    const showTitle = card.querySelector('.show-title');
+    if (showTitle) {
+      const title = showTitle.textContent.toLowerCase().replace(/\s+/g, '-');
+      card.dataset.showId = title;
+    }
+  });
+});
+  </script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+
+  // Buat overlay
+  const overlay = document.createElement("div");
+  overlay.classList.add("menu-overlay");
+  document.body.appendChild(overlay);
+
+  // Buat sidebar menu
+  const sidebarMenu = document.createElement("div");
+  sidebarMenu.classList.add("sidebar-menu");
+  sidebarMenu.innerHTML = `
+    <div class="sidebar-header">
+      <button class="close-btn"><i class="fas fa-times"></i></button>
+      <span class="menu-logo"><i class="fas fa-tv"></i> Menu</span>
+    </div>
+    <ul class="sidebar-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="movies.html"><i class="fas fa-film"></i> Movies</a></li>
+      <li><a href="shows.html" class="active"><i class="fas fa-tv"></i> TV Shows</a></li>
+      <li><a href="premium.html"><i class="fas fa-crown"></i> VIP</a></li>
+         <hr style="border-color: rgba(255,255,255,0.1);">
+      <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+      <li><a href="login.html" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  `;
+  document.body.appendChild(sidebarMenu);
+
+  const closeBtn = sidebarMenu.querySelector(".close-btn");
+
+  // Toggle menu
+  menuToggle.addEventListener("click", () => {
+    sidebarMenu.classList.add("active");
+    overlay.classList.add("active");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    sidebarMenu.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+
+  overlay.addEventListener("click", () => {
+    sidebarMenu.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+});
+</script>
+
+</body>
+</html>

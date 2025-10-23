@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies - K8Stream</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="movies.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+
+    
+    <div class="container">
+      <div class="header-content">
+        <div class="menu-toggle" id="menuToggle">
+  <i class="fas fa-bars"></i>
+</div>
+        <a href="index.html" class="logo">
+          <i class="fas fa-film"></i>
+          <span>K8Stream</span>
+        </a>
+        
+
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movies.html" class="active">Movies</a></li>
+          <li><a href="shows.html">Tv Shows</a></li>
+          <li><a href="premium.html">VIP</a></li>
+        </ul>
+        
+        <div class="search-bar">
+          <input type="text" placeholder="Cari film...">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+      <div class="profile-dropdown">
+  <div class="profile-trigger" onclick="toggleMenu()">
+    <img src="user.jpg" alt="Profile" class="profile-img">
+    <i class="fas fa-chevron-down"></i>
+  </div>
+
+  <!-- Dropdown menu -->
+  <div class="dropdown-menu" id="subMenu">
+  <a href="profile.html" class="dropdown-item">
+    <i class="fas fa-user"></i>
+    <span>Profile</span>
+
+    <!--tambahkan menu dropdown login-->
+    <a href="login.html" class="dropdown-item sign in" onclick="Login()">
+      <i class="fas fa-sign-in-alt"></i>
+      <span>log In</span>
+        </a>
+
+  </a>
+  <a hrsef="login.html" class="dropdown-item logout">
+    <i class="fas fa-sign-out-alt"></i>
+    <span>Logout</span>
+  </a>
+</div>
+
+</div>
+
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Category Navigation -->
+    <div class="category-nav">
+      <div class="category-list">
+        <div class="category-item active" data-category="all">Semua</div>
+        <div class="category-item" data-category="action">Action</div>
+        <div class="category-item" data-category="animation">Animation</div>
+        <div class="category-item" data-category="crime">Crime</div>
+        <div class="category-item" data-category="fantasy">Fantasy</div>
+        <div class="category-item" data-category="drama">Drama</div>
+        <div class="category-item" data-category="scifi">Sci-Fi</div>
+      </div>
+    </div>
+
+    <!-- Movies Section - Page 1 -->
+    <div class="movies-section" id="page1">
+      <h2 class="section-title">Film Terbaru</h2>
+
+      <div class="movies-grid">
+        <!-- Movie Card 1 - Action -->
+        <div class="movie-card" data-category="action">
+        <a href="deadpool&wolverine.html">
+          <img src="deadpool.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Deadpool & Wolverine</h3>
+            <div class="movie-meta">
+              <span>2024</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.2</span>
+            </div>
+          </div>
+              </a>
+        </div>
+        
+        <!-- Movie Card 2 - Animation -->
+        <div class="movie-card" data-category="animation">
+          <img src="Big Hero 6.jpg" alt="Movie Poster" class="movie-poster">
+          <a href="bighero6.html">
+          <div class="movie-info">
+            <h3 class="movie-title">Big Hero 6</h3>
+            <div class="movie-meta">
+              <span>2014</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 7.8</span>
+            </div>
+          </div>
+          </a>
+        </div>
+        
+        <!-- Movie Card 3 - Action -->
+        <div class="movie-card" data-category="action">
+          <img src="fury.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Fury</h3>
+            <div class="movie-meta">
+              <span>2014</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 7.5</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Movie Card 4 - Action -->
+        <div class="movie-card" data-category="action">
+          <img src="ShangChi.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Shang-Chi</h3>
+            <div class="movie-meta">
+              <span>2021</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 7.4</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Movie Card 5 - Animation -->
+        <div class="movie-card" data-category="animation">
+          <img src="udin.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Kimi no Namaewa Udin</h3>
+            <div class="movie-meta">
+              <span>2021</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.4</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Movie Card 6 - Animation -->
+        <div class="movie-card" data-category="animation">
+          <img src="zootopia.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Zootopia</h3>
+            <div class="movie-meta">
+              <span>2016</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.1</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Movie Card 7 - Horror -->
+        <div class="movie-card" data-category="horror">
+          <img src="conjuring.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">The Conjuring</h3>
+            <div class="movie-meta">
+              <span>2013</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.4</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Movie Card 8 - Action -->
+        <div class="movie-card" data-category="action">
+          <img src="galaxy.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Guardians of the Galaxy</h3>
+            <div class="movie-meta">
+              <span>2014</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.2</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movie Card 9 - Sci-Fi -->
+        <div class="movie-card" data-category="scifi">
+          <img src="Inception (2010).jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Inception</h3>
+            <div class="movie-meta">
+              <span>2010</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.8</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movie Card 10 - Sci-Fi -->
+        <div class="movie-card" data-category="scifi">
+          <img src="interstellar.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Interstellar</h3>
+            <div class="movie-meta">
+              <span>2014</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.6</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movie Card 11 - Fantasy -->
+        <div class="movie-card" data-category="fantasy">
+          <img src="avatar.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Avatar</h3>
+            <div class="movie-meta">
+              <span>2009</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 7.8</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movie Card 12 - Crime -->
+        <div class="movie-card" data-category="crime">
+          <img src="Joker Film Poster.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Joker</h3>
+            <div class="movie-meta">
+              <span>2019</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.4</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Movies Section - Page 2 (Hidden by default) -->
+    <div class="movies-section" id="page2" style="display: none;">
+      <div class="movies-grid">
+
+        <!-- Movie Card 13 - Drama -->
+        <div class="movie-card" data-category="animation">
+          <img src="flow.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Flow</h3>
+            <div class="movie-meta">
+              <span>2022</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.2</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Movie Card 14 - Action -->
+        <div class="movie-card" data-category="action">
+          <img src="attack on titan.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Attack on Titan</h3>
+            <div class="movie-meta">
+              <span>2013</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 7.8</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Movie Card 15 - Drama -->
+        <div class="movie-card" data-category="drama">
+          <img src="oppenheimer.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Oppenheimer</h3>
+            <div class="movie-meta">
+              <span>2023</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 7.5</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Movie Card 16 - Action -->
+        <div class="movie-card" data-category="action">
+          <img src="john wick.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">John Wick</h3>
+            <div class="movie-meta">
+              <span>2014</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 7.4</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Movie Card 17 - Drama -->
+        <div class="movie-card" data-category="drama">
+          <img src="forest gump.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Forest Gump</h3>
+            <div class="movie-meta">
+              <span>1994</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.4</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Movie Card 18 - Action -->
+        <div class="movie-card" data-category="action">
+          <img src="Captain America-Civil War.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Captain America: Civil War</h3>
+            <div class="movie-meta">
+              <span>2016</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.1</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Movie Card 19 - Drama -->
+        <div class="movie-card" data-category="drama">
+          <img src="all of us.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">All of Us</h3>
+            <div class="movie-meta">
+              <span>2023</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.4</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Movie Card 20 - Sci-Fi -->
+        <div class="movie-card" data-category="scifi">
+          <img src="interstellar.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Interstellar</h3>
+            <div class="movie-meta">
+              <span>2014</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.2</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movie Card 21 - Thriller -->
+        <div class="movie-card" data-category="thriller">
+          <img src="Parasite.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Parasite</h3>
+            <div class="movie-meta">
+              <span>2019</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movie Card 22 - Adventure -->
+        <div class="movie-card" data-category="adventure">
+          <img src="Dune.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Dune</h3>
+            <div class="movie-meta">
+              <span>2021</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movie Card 23 - Action -->
+        <div class="movie-card" data-category="action">
+          <img src="spiderman no way home.jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">Spider-Man: No Way Home</h3>
+            <div class="movie-meta">
+              <span>2021</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movie Card 24 - Action -->
+        <div class="movie-card" data-category="action">
+          <img src="The Batman (2022).jpg" alt="Movie Poster" class="movie-poster">
+          <div class="movie-info">
+            <h3 class="movie-title">The Batman</h3>
+            <div class="movie-meta">
+              <span>2022</span>
+              <span class="movie-rating"><i class="fas fa-star"></i> 8.0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Movies Section - Page 3 (Hidden by default) -->
+    <div class="movies-section" id="page3" style="display: none;">
+      <div class="movies-grid">
+          </div>
+        </div>
+
+       
+    <div class="movies-section" id="page4" style="display: none;">
+      <div class="movies-grid">      
+          </div>
+        </div>
+
+
+    <!-- Movies Section - Page 5 (Hidden by default) -->  
+    <div class="movies-section" id="page5" style="display: none;">
+      <div class="movies-grid">
+        <!-- Movie Card 49 - Animation -->
+          </div>   
+        </div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination">
+      <button class="active" onclick="showPage(1)">1</button>
+      <button onclick="showPage(2)">2</button>
+     
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 K8Stream. All rights reserved.</p>
+    </div>
+  </footer>
+
+  
+  <script>
+    let currentCategory = 'all';
+    let currentPage = 1;
+    const totalPages = 5;
+    const moviesPerPage = 12;
+
+    // Function to switch between pages
+    function showPage(pageNumber) {
+      // Hide all pages
+      for (let i = 1; i <= totalPages; i++) {
+        document.getElementById('page' + i).style.display = 'none';
+      }
+      
+      // Show selected page
+      document.getElementById('page' + pageNumber).style.display = 'block';
+      currentPage = pageNumber;
+      
+      // Update active pagination button
+      const buttons = document.querySelectorAll('.pagination button');
+      buttons.forEach(button => button.classList.remove('active'));
+      buttons[pageNumber - 1].classList.add('active');
+    }
+
+    // Function to filter movies by category
+    function filterMovies(category) {
+      currentCategory = category;
+      
+      // Show/hide movies based on category
+      const allMovies = document.querySelectorAll('.movie-card');
+      
+      allMovies.forEach(movie => {
+        if (category === 'all' || movie.dataset.category === category) {
+          movie.style.display = 'block';
+        } else {
+          movie.style.display = 'none';
+        }
+      });
+      
+      // Show the first page after filtering
+      showPage(1);
+      
+      // Update pagination based on visible movies
+      updatePagination();
+    }
+
+    // Function to update pagination based on visible movies
+    function updatePagination() {
+      // Get all visible movies
+      const visibleMovies = document.querySelectorAll('.movie-card:not([style*="display: none"])');
+      
+      // Calculate total pages needed based on visible movies
+      const visibleMoviesCount = visibleMovies.length;
+      const neededPages = Math.ceil(visibleMoviesCount / moviesPerPage);
+      
+      // Hide/show pagination buttons based on needed pages
+      const paginationButtons = document.querySelectorAll('.pagination button');
+      
+      paginationButtons.forEach((button, index) => {
+        if (index < neededPages) {
+          button.style.display = 'inline-block';
+        } else {
+          button.style.display = 'none';
+        }
+      });
+      
+      // If current page is now beyond the available pages, show the last page
+      if (currentPage > neededPages && neededPages > 0) {
+        showPage(neededPages);
+      }
+    }
+
+    // Category selection
+    const categoryItems = document.querySelectorAll('.category-item');
+    categoryItems.forEach(item => {
+      item.addEventListener('click', function() {
+        // Remove active class from all items
+        categoryItems.forEach(cat => cat.classList.remove('active'));
+        
+        // Add active class to clicked item
+        this.classList.add('active');
+        
+        // Filter movies by selected category
+        const category = this.dataset.category;
+        filterMovies(category);
+      });
+    });
+
+    // Initialize pagination on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      updatePagination();
+    });
+  </script>
+
+  <script>
+  let subMenu = document.getElementById("subMenu");
+
+  function toggleMenu() {
+    subMenu.classList.toggle("open-menu");
+  }
+
+  function logout() {
+   window.location.href = "login.html";
+  }
+</script>
+
+<!--kode tambahan fungsi search-->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Ambil elemen search
+    const searchInput = document.querySelector('.search-bar input');
+    const searchButton = document.querySelector('.search-bar button');
+    
+    // Fungsi pencarian
+    function searchMovies() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        
+        // Jika search kosong, tampilkan semua film dan reset ke halaman 1
+        if (searchTerm === '') {
+            // Tampilkan semua film
+            const allMovies = document.querySelectorAll('.movie-card');
+            allMovies.forEach(movie => {
+                movie.style.display = 'block';
+            });
+            
+            // Reset ke tampilan awal (hanya halaman 1 yang terlihat)
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById('page' + i).style.display = i === 1 ? 'block' : 'none';
+            }
+            
+            // Reset pagination
+            const paginationButtons = document.querySelectorAll('.pagination button');
+            paginationButtons.forEach(button => button.style.display = 'inline-block');
+            paginationButtons[0].classList.add('active');
+            
+            // Hapus pesan "tidak ada hasil" jika ada
+            const noResultsMsg = document.getElementById('no-results');
+            if (noResultsMsg) {
+                noResultsMsg.style.display = 'none';
+            }
+            
+            return;
+        }
+        
+        // Tampilkan semua halaman untuk pencarian
+        for (let i = 1; i <= 5; i++) {
+            document.getElementById('page' + i).style.display = 'block';
+        }
+        
+        // Sembunyikan semua pagination buttons
+        const paginationButtons = document.querySelectorAll('.pagination button');
+        paginationButtons.forEach(button => button.style.display = 'none');
+        
+        // Cari film yang cocok di semua halaman
+        let hasResults = false;
+        const allMovies = document.querySelectorAll('.movie-card');
+        
+        allMovies.forEach(movie => {
+            const title = movie.querySelector('.movie-title').textContent.toLowerCase();
+            if (title.includes(searchTerm)) {
+                movie.style.display = 'block';
+                hasResults = true;
+            } else {
+                movie.style.display = 'none';
+            }
+        });
+        
+        // Jika tidak ada hasil, tampilkan pesan
+        if (!hasResults) {
+            // Cek apakah sudah ada pesan "tidak ada hasil"
+            let noResultsMsg = document.getElementById('no-results');
+            if (!noResultsMsg) {
+                noResultsMsg = document.createElement('div');
+                noResultsMsg.id = 'no-results';
+                noResultsMsg.className = 'no-results-message';
+                noResultsMsg.innerHTML = `
+                    <div class="container">
+                        <i class="fas fa-search"></i>
+                        <h3>Tidak ada film yang ditemukan</h3>
+                        <p>Coba gunakan kata kunci lain</p>
+                        <button class="reset-search-btn" onclick="resetSearch()">Reset Pencarian</button>
+                    </div>
+                `;
+                document.querySelector('main').appendChild(noResultsMsg);
+            }
+            noResultsMsg.style.display = 'block';
+        } else {
+            // Sembunyikan pesan "tidak ada hasil" jika ada
+            const noResultsMsg = document.getElementById('no-results');
+            if (noResultsMsg) {
+                noResultsMsg.style.display = 'none';
+            }
+        }
+    }
+    
+    // Fungsi reset pencarian
+    function resetSearch() {
+        searchInput.value = '';
+        searchMovies();
+    }
+    
+    // Event listener untuk tombol search
+    searchButton.addEventListener('click', searchMovies);
+    
+    // Event listener untuk Enter key di input search
+    searchInput.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            searchMovies();
+        }
+    });
+    
+    // Event listener untuk input saat mengetik (live search)
+    searchInput.addEventListener('input', function() {
+        // Tambahkan delay agar tidak terlalu sering mencari
+        clearTimeout(this.searchTimeout);
+        this.searchTimeout = setTimeout(searchMovies, 300);
+    });
+    
+    // Tambahkan fungsi resetSearch ke global scope
+    window.resetSearch = resetSearch;
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+
+  // Buat overlay hitam transparan di belakang menu
+  const overlay = document.createElement("div");
+  overlay.classList.add("menu-overlay");
+  document.body.appendChild(overlay);
+
+  // Buat menu sidebar
+  const sidebarMenu = document.createElement("div");
+  sidebarMenu.classList.add("sidebar-menu");
+  sidebarMenu.innerHTML = `
+    <div class="sidebar-header">
+      <button class="close-btn"><i class="fas fa-times"></i></button>
+      <span class="menu-logo"><i class="fas fa-film"></i> Menu</span>
+    </div>
+    <ul class="sidebar-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="movies.html"><i class="fas fa-film"></i> Movies</a></li>
+      <li><a href="shows.html"><i class="fas fa-tv"></i> TV Shows</a></li>
+      <li><a href="premium.html"><i class="fas fa-crown"></i> VIP</a></li>
+      <hr style="border-color: rgba(255,255,255,0.1);">
+        <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+       <li><a href="login.html" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+  
+    </ul>
+  `;
+  document.body.appendChild(sidebarMenu);
+
+  const closeBtn = sidebarMenu.querySelector(".close-btn");
+
+  // Toggle menu
+  menuToggle.addEventListener("click", () => {
+    sidebarMenu.classList.add("active");
+    overlay.classList.add("active");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    sidebarMenu.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+
+  overlay.addEventListener("click", () => {
+    sidebarMenu.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+});
+</script>
+
+
+</body>
+</html>
