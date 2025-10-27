@@ -526,9 +526,9 @@ footer {
 .menu-toggle {
   display: none;
   cursor: pointer;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #fff;
-  z-index: 3000;
+  
 }
 
 @media (max-width: 900px) {
